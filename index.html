@@ -11,11 +11,16 @@
     <style>
         body { font-family: 'Montserrat', sans-serif; }
         .font-serif { font-family: 'Cormorant Garamond', serif; }
+        /* Style pour l'effet de transition de la FAQ */
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, opacity 0.3s ease-out; opacity: 0; }
+        .faq-item.active .faq-answer { max-height: 200px; opacity: 1; margin-top: 12px; }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
     </style>
 </head>
 <body class="bg-[#faf9f6] text-[#1c1b1a] antialiased flex flex-col min-h-screen">
 
-    <!-- NAV BAR (Identique sur toutes les pages pour la cohérence) -->
+    <!-- NAV BAR -->
     <nav class="bg-[#1c1b1a] text-white px-8 py-6 flex justify-between items-center tracking-[0.2em] uppercase text-[11px] sticky top-0 z-50">
         <a href="index.html" class="text-xl font-serif tracking-[0.25em] font-light">L'Atelier du Grain</a>
         <div class="hidden md:flex space-x-12 font-light">
@@ -38,7 +43,7 @@
         </div>
     </header>
 
-    <!-- SECTION LE MANIFESTE (Présentation de l'esprit) -->
+    <!-- SECTION LE MANIFESTE -->
     <section class="py-24 px-8 max-w-5xl mx-auto text-center">
         <span class="text-[#c5a880] uppercase tracking-[0.3em] text-[10px] font-medium block mb-3">Notre Philosophie</span>
         <h2 class="text-3xl md:text-5xl font-serif font-light mb-6 tracking-wide text-stone-900">Farines locales & Levain sauvage</h2>
@@ -48,7 +53,7 @@
         </p>
     </section>
 
-    <!-- SECTION ENGAGEMENTS & VALEURS (Les piliers de la boulangerie) -->
+    <!-- SECTION ENGAGEMENTS & VALEURS -->
     <section class="bg-[#f2f0eb] py-20 px-8">
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
             <div class="space-y-4">
@@ -93,7 +98,6 @@
                     <span class="uppercase tracking-widest text-[10px] font-medium">Fermé</span>
                 </div>
             </div>
-            
             <p class="text-[11px] text-stone-400 italic font-light">Note : En raison de notre fabrication artisanale à flux tendu, certaines pièces signatures peuvent être épuisées en fin d'après-midi.</p>
         </div>
 
@@ -112,11 +116,69 @@
         </div>
     </section>
 
+    <!-- ❓ SECTION FAQ (FOIRE AUX QUESTIONS) -->
+    <section class="bg-white border-t border-stone-100 py-24 px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-[#c5a880] uppercase tracking-[0.3em] text-[10px] font-medium block mb-2">Des Réponses à vos questions</span>
+                <h2 class="text-3xl font-serif font-light tracking-wide">Foire Aux Questions</h2>
+                <div class="w-12 h-[1px] bg-[#c5a880] mx-auto mt-4"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <div class="faq-item border-b border-stone-200 pb-4 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center text-sm font-medium tracking-wide text-stone-800">
+                        <h3>Utilisez-vous de la levure industrielle ?</h3>
+                        <span class="faq-icon text-[#c5a880] text-lg font-light transition-transform">+</span>
+                    </div>
+                    <div class="faq-answer text-xs text-stone-500 font-light leading-relaxed">
+                        Non. Tous nos pains de la gamme permanente sont exclusivement fermentés au levain naturel sauvage (un élevage maison d'eau et de farine). Cela garantit une meilleure conservation et un indice glycémique plus bas.
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item border-b border-stone-200 pb-4 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center text-sm font-medium tracking-wide text-stone-800">
+                        <h3>Vos farines contiennent-elles du gluten ?</h3>
+                        <span class="faq-icon text-[#c5a880] text-lg font-light transition-transform">+</span>
+                    </div>
+                    <div class="faq-answer text-xs text-stone-500 font-light leading-relaxed">
+                        Oui, nos farines de blé, de seigle et d'épeautre contiennent naturellement du gluten. Cependant, grâce à notre fermentation très longue au levain, le gluten est pré-digéré par les bactéries lactiques, ce qui rend nos pains infiniment plus tolérables pour les personnes sensibles.
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item border-b border-stone-200 pb-4 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center text-sm font-medium tracking-wide text-stone-800">
+                        <h3>Proposez-vous des options Click & Collect ou de réservation ?</h3>
+                        <span class="faq-icon text-[#c5a880] text-lg font-light transition-transform">+</span>
+                    </div>
+                    <div class="faq-answer text-xs text-stone-500 font-light leading-relaxed">
+                        Pour l'instant, nous privilégions la vente directe à la boutique pour garantir la fraîcheur absolue à la sortie du four. Pour les grosses commandes ou événements, vous pouvez nous contacter 48h à l'avance via notre page Contact.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="bg-[#1c1b1a] text-stone-500 text-center py-12 text-[9px] tracking-[0.25em] uppercase mt-auto">
         <p class="mb-2">Maison L'Atelier du Grain — © 2026</p>
         <p class="text-stone-700 text-[8px] normal-case tracking-normal">Fait avec exigence pour les amoureux du bon pain.</p>
     </footer>
+
+    <!-- SCRIPT POUR L'ACCORDÉON DE LA FAQ -->
+    <script>
+        function toggleFaq(element) {
+            // Ferme les autres FAQ ouvertes (optionnel, pour un comportement d'accordéon pur)
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== element) item.classList.remove('active');
+            });
+            // Alterne l'état de la FAQ cliquée
+            element.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>

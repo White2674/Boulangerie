@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | L'Atelier du Grain</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Montserrat', sans-serif; } .font-serif { font-family: 'Cormorant Garamond', serif; }</style>
+</head>
+<body class="bg-[#faf9f6] text-[#1c1b1a] antialiased flex flex-col min-h-screen justify-between">
+
+    <nav class="bg-[#1c1b1a] text-white px-8 py-6 flex justify-between items-center tracking-[0.2em] uppercase text-[11px]">
+        <a href="index.html" class="text-xl font-serif tracking-[0.25em] font-light">L'Atelier du Grain</a>
+        <div class="hidden md:flex space-x-12 font-light">
+            <a href="index.html" class="text-stone-400 hover:text-white transition">Accueil</a>
+            <a href="propos.html" class="text-stone-400 hover:text-white transition">À Propos</a>
+            <a href="catalogue.html" class="text-stone-400 hover:text-white transition">La Collection</a>
+            <a href="album.html" class="text-stone-400 hover:text-white transition">L'Album</a>
+            <a href="contact.html" class="text-[#c5a880]">Contact</a>
+        </div>
+    </nav>
+
+    <main class="py-16 px-8 max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start flex-1 w-full">
+        <div class="space-y-8">
+            <div>
+                <span class="text-[#c5a880] uppercase tracking-[0.2em] text-xs block mb-2">Maison Mère</span>
+                <h2 class="text-4xl font-serif font-light tracking-wide">L'Atelier de Paris</h2>
+                <div class="w-12 h-[1px] bg-[#c5a880] my-4"></div>
+                <p class="text-sm text-stone-600 font-light">42 Rue de la Levure, 75011 Paris</p>
+            </div>
+            <div class="rounded overflow-hidden h-52 opacity-60 grayscale border border-stone-200">
+                <iframe class="w-full h-full" src="https://maps.google.com/maps?q=Paris%2075011&t=&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 rounded shadow-xs border border-stone-100">
+            <h3 class="text-2xl font-serif font-light mb-6">Demandes Spéciales</h3>
+            <form onsubmit="event.preventDefault(); alert('Message envoyé.');" class="space-y-6 text-xs tracking-widest uppercase">
+                <div class="border-b border-stone-300 pb-2">
+                    <label class="block text-stone-400 mb-1 font-light text-[10px]">Identité</label>
+                    <input type="text" required class="w-full bg-transparent outline-none normal-case text-sm">
+                </div>
+                <div class="border-b border-stone-300 pb-2">
+                    <label class="block text-stone-400 mb-1 font-light text-[10px]">Email</label>
+                    <input type="email" required class="w-full bg-transparent outline-none normal-case text-sm">
+                </div>
+                <button type="submit" class="w-full bg-[#1c1b1a] text-white py-4 hover:bg-[#c5a880] transition duration-500 cursor-pointer">Soumettre</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-[#1c1b1a] text-stone-500 text-center py-8 text-[9px] tracking-[0.25em] uppercase">
+        <p>Maison L'Atelier du Grain — © 2026</p>
+    </footer>
+</body>
+</html>

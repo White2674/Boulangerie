@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Album | L'Atelier du Grain</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Montserrat', sans-serif; } .font-serif { font-family: 'Cormorant Garamond', serif; }</style>
+</head>
+<body class="bg-[#faf9f6] text-[#1c1b1a] antialiased flex flex-col min-h-screen justify-between">
+
+    <nav class="bg-[#1c1b1a] text-white px-8 py-6 flex justify-between items-center tracking-[0.2em] uppercase text-[11px]">
+        <a href="index.html" class="text-xl font-serif tracking-[0.25em] font-light">L'Atelier du Grain</a>
+        <div class="hidden md:flex space-x-12 font-light">
+            <a href="index.html" class="text-stone-400 hover:text-white transition">Accueil</a>
+            <a href="propos.html" class="text-stone-400 hover:text-white transition">À Propos</a>
+            <a href="catalogue.html" class="text-stone-400 hover:text-white transition">La Collection</a>
+            <a href="album.html" class="text-[#c5a880]">L'Album</a>
+            <a href="contact.html" class="text-stone-400 hover:text-white transition">Contact</a>
+        </div>
+    </nav>
+
+    <main class="py-16 px-6 max-w-6xl mx-auto flex-1">
+        <div class="text-center mb-16">
+            <span class="text-[#c5a880] uppercase tracking-[0.2em] text-xs block mb-2">Instantanés</span>
+            <h2 class="text-3xl font-serif font-light tracking-wide">Les Coulisses de l'Atelier</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px] md:auto-rows-[300px]">
+            <div class="md:col-span-4 md:row-span-2 overflow-hidden relative rounded-[2px]">
+                <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
+            </div>
+            <div class="md:col-span-8 md:row-span-1 overflow-hidden relative rounded-[2px]">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
+            </div>
+            <div class="md:col-span-4 md:row-span-1 overflow-hidden relative rounded-[2px]">
+                <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=500" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
+            </div>
+            <div class="md:col-span-4 md:row-span-1 overflow-hidden relative rounded-[2px]">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=500" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#1c1b1a] text-stone-500 text-center py-8 text-[9px] tracking-[0.25em] uppercase">
+        <p>Maison L'Atelier du Grain — © 2026</p>
+    </footer>
+</body>
+</html>

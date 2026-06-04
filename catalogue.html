@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Collection | L'Atelier du Grain</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Montserrat', sans-serif; } .font-serif { font-family: 'Cormorant Garamond', serif; }</style>
+</head>
+<body class="bg-[#faf9f6] text-[#1c1b1a] antialiased flex flex-col min-h-screen justify-between">
+
+    <nav class="bg-[#1c1b1a] text-white px-8 py-6 flex justify-between items-center tracking-[0.2em] uppercase text-[11px]">
+        <a href="index.html" class="text-xl font-serif tracking-[0.25em] font-light">L'Atelier du Grain</a>
+        <div class="hidden md:flex space-x-12 font-light">
+            <a href="index.html" class="text-stone-400 hover:text-white transition">Accueil</a>
+            <a href="propos.html" class="text-stone-400 hover:text-white transition">À Propos</a>
+            <a href="catalogue.html" class="text-[#c5a880]">La Collection</a>
+            <a href="album.html" class="text-stone-400 hover:text-white transition">L'Album</a>
+            <a href="contact.html" class="text-stone-400 hover:text-white transition">Contact</a>
+        </div>
+    </nav>
+
+    <main class="py-16 px-8 max-w-6xl mx-auto flex-1">
+        <div class="text-center mb-12">
+            <span class="text-[#c5a880] uppercase tracking-[0.2em] text-xs block mb-2">Les Créations</span>
+            <h2 class="text-3xl font-serif font-light tracking-wide">La Collection Permanente</h2>
+        </div>
+
+        <!-- Filtres JS -->
+        <div class="flex flex-wrap justify-center gap-8 mb-12 text-xs uppercase tracking-[0.2em] font-light border-b border-stone-200 pb-4" id="filter-buttons">
+            <button onclick="filterCategory('tous')" class="text-[#c5a880] border-b border-[#c5a880] pb-1 cursor-pointer">Tous</button>
+            <button onclick="filterCategory('pains')" class="text-stone-400 hover:text-[#1c1b1a] cursor-pointer">Pains</button>
+            <button onclick="filterCategory('viennoiseries')" class="text-stone-400 hover:text-[#1c1b1a] cursor-pointer">Viennoiseries</button>
+            <button onclick="filterCategory('patisseries')" class="text-stone-400 hover:text-[#1c1b1a] cursor-pointer">Pâtisseries</button>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid"></div>
+    </main>
+
+    <script>
+        const products = [
+            { id: 1, name: "La Baguette Tradition", category: "pains", tag: "Signature", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=400" },
+            { id: 2, name: "Le Pain de Meule Bio", category: "pains", tag: "Blés Anciens", img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=400" },
+            { id: 3, name: "Le Croissant Feuilleté", category: "viennoiseries", tag: "AOP Charentes", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=400" },
+            { id: 4, name: "L'Éclair Grand Cru", category: "patisseries", tag: "Chocolat 72%", img: "https://images.unsplash.com/photo-1612203985029-e6786b224304?q=80&w=400" }
+        ];
+
+        function renderProducts(filter = 'tous') {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+            const filtered = filter === 'tous' ? products : products.filter(p => p.category === filter);
+            filtered.forEach(p => {
+                grid.innerHTML += `
+                    <div class="space-y-3">
+                        <img src="${p.img}" class="w-full h-64 object-cover rounded-[1px] grayscale opacity-90">
+                        <span class="text-[9px] text-[#c5a880] uppercase tracking-widest block">${p.tag}</span>
+                        <h3 class="font-serif text-md text-stone-900 font-light">${p.name}</h3>
+                    </div>`;
+            });
+        }
+        function filterCategory(cat) {
+            renderProducts(cat);
+            document.querySelectorAll('#filter-buttons button').forEach(btn => btn.className = "text-stone-400 hover:text-[#1c1b1a] cursor-pointer");
+            event.currentTarget.className = "text-[#c5a880] border-b border-[#c5a880] pb-1 cursor-pointer";
+        }
+        renderProducts();
+    </script>
+
+    <footer class="bg-[#1c1b1a] text-stone-500 text-center py-8 text-[9px] tracking-[0.25em] uppercase">
+        <p>Maison L'Atelier du Grain — © 2026</p>
+    </footer>
+</body>
+</html>

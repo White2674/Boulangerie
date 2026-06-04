@@ -14,9 +14,9 @@
         
         /* Transition FAQ fluide & Organique */
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease; opacity: 0; }
-        .faq-item.active .faq-answer { max-height: 300px; opacity: 1; margin-top: 18px; }
+        .faq-item.active .faq-answer { max-height: 300px; opacity: 1; margin-top: 14px; }
         .faq-icon { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .faq-item.active .faq-icon { transform: rotate(135deg); color: #E0A96D; }
+        .faq-item.active .faq-icon { transform: rotate(135deg); }
 
         /* Marquee Infini Ultra Rapide et Impactant */
         @keyframes marquee {
@@ -30,7 +30,7 @@
 
     <!-- 🌐 BARRE DE NAVIGATION (Bleu Profond & Or Électrique) -->
     <nav class="bg-[#0B132B] border-b-3 border-[#E0A96D] sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 h-26 flex justify-between items-center relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-24 flex justify-between items-center relative">
             <a href="index.html" class="font-brand text-2xl tracking-tighter text-white uppercase font-black hover:text-[#E0A96D] transition-colors">
                 L'Atelier<span class="text-[#E0A96D]">.</span> du Grain
             </a>
@@ -49,11 +49,9 @@
         </div>
     </nav>
 
-    <!-- 🥖 HERO SECTION (Impact Électrique : Typo Géante & Vibrations Bleu/Or) -->
-    <header class="bg-[#0B132B] text-white min-h-[85vh] flex items-center relative overflow-hidden border-b-3 border-[#E0A96D]">
-        <!-- Halo lumineux bleu cyan/or en arrière-plan pour donner de la profondeur -->
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(224,169,109,0.18),transparent_50%)]"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(28,119,193,0.15),transparent_60%)]"></div>
+    <!-- 🥖 SECTION 1 [BLEUE] : HERO SECTION (Impact Électrique & Or) -->
+    <header class="bg-[#0B132B] text-white min-h-[80vh] flex items-center relative overflow-hidden border-b-3 border-[#E0A96D]">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(224,169,109,0.15),transparent_50%)]"></div>
         
         <div class="max-w-7xl mx-auto w-full grid md:grid-cols-12 items-center gap-12 px-6 md:px-12 py-20 relative z-10">
             <div class="space-y-8 max-w-2xl md:col-span-8">
@@ -72,44 +70,36 @@
                     </a>
                 </div>
             </div>
-            <!-- Image au cadrage brutal avec bordure dorée vive -->
-            <div class="md:col-span-4 relative h-[500px] w-full hidden md:block border-3 border-[#E0A96D] overflow-hidden bg-slate-900 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-700">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600" class="w-full h-full object-cover grayscale contrast-125 brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-1000" alt="Le pain frais croustillant">
+            <div class="md:col-span-4 relative h-[480px] w-full hidden md:block border-3 border-[#E0A96D] overflow-hidden bg-slate-900 shadow-2xl transform rotate-1">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600" class="w-full h-full object-cover grayscale contrast-125 brightness-90" alt="Le pain frais croustillant">
             </div>
         </div>
     </header>
 
-    <!-- ✨ LE PRODUIT DU MOMENT (Inversion Totale : Fond Blanc Craie Lumineux) -->
-    <section class="py-36 bg-[#F4F5F6] text-[#0B132B] border-b-3 border-[#0B132B] relative">
+    <!-- ✨ SECTION 2 [BLANCHE] : LE PRODUIT DU MOMENT (Contraste Lumineux Blanc Craie & Bleu Nuit) -->
+    <section class="py-36 bg-[#F4F5F6] text-[#0B132B] border-b-3 border-[#0B132B]">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="grid md:grid-cols-12 gap-16 items-center">
-                <!-- Image brute cerclée de Bleu Nuit -->
                 <div class="md:col-span-6 relative h-[550px] bg-slate-800 border-4 border-[#0B132B] shadow-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1200" class="w-full h-full object-cover contrast-110 brightness-95 hover:scale-105 transition-transform duration-700" alt="Le Pavé du 11ème">
+                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1200" class="w-full h-full object-cover contrast-110" alt="Le Pavé du 11ème">
                     <div class="absolute bottom-6 right-6 bg-[#0B132B] text-[#E0A96D] text-[10px] uppercase tracking-[0.3em] font-black px-6 py-4 border-2 border-[#E0A96D]">
                         Sortie du four à 11h00
                     </div>
                 </div>
-                <!-- Descriptif ultra-typographique -->
                 <div class="md:col-span-6 space-y-8">
                     <div class="space-y-4">
-                        <span class="text-[#E0A96D] text-[11px] uppercase tracking-[0.4em] font-black block">L'Éphémère Secret de la Semaine</span>
-                        <h2 class="text-4xl sm:text-6xl font-brand text-[#0B132B] tracking-tighter leading-[0.95]">Le Pavé du 11ème <br><span class="font-serif italic text-[#E0A96D]">au Petit Épeautre</span></h2>
+                        <span class="text-slate-400 text-[11px] uppercase tracking-[0.4em] font-black block">L'Éphémère Secret de la Semaine</span>
+                        <h2 class="text-4xl sm:text-6xl font-brand text-[#0B132B] tracking-tighter leading-[0.95]">Le Pavé du 11ème <br><span class="font-serif italic text-slate-500">au Petit Épeautre</span></h2>
                     </div>
-                    
-                    <!-- Accroche textuelle impactante en Bleu Nuit -->
                     <div class="border-l-4 border-[#0B132B] pl-6 italic text-[#0B132B] text-lg font-bold tracking-tight">
                         "Un blé millénaire, une digestibilité parfaite, un goût qui reste en bouche."
                     </div>
-
                     <p class="text-slate-700 text-sm font-normal leading-relaxed">
-                        Imaginez une mie <span class="text-[#0B132B] font-black underline decoration-[#E0A96D] decoration-3">humide, très alvéolée</span>, presque crèmeuse, protégée par une croûte cuite à la limite de la caramélisation. Travaillé avec une variété de blé ancestral presque oubliée et très faible en gluten, ce pain signature dévoile à la coupe des arômes sauvages de noix grillées. On vient de tout Paris pour le chercher.
+                        Imaginez une mie <span class="text-[#0B132B] font-black underline decoration-slate-400 decoration-3">humide, très alvéolée</span>, presque crémeuse, protégée par une croûte cuite à la limite de la caramélisation. Travaillé avec une variété de blé ancestral presque oubliée et très faible en gluten, ce pain signature dévoile à la coupe des arômes sauvages de noix grillées.
                     </p>
-                    
-                    <!-- Blocs techniques massifs (Bleu Nuit vs Blanc) -->
                     <div class="grid grid-cols-2 gap-4 border-t-2 border-[#0B132B] pt-6 text-xs tracking-[0.2em] uppercase">
                         <div class="bg-[#0B132B] text-white p-6 border-2 border-[#0B132B]">
-                            <span class="text-[9px] block text-[#E0A96D] font-black mb-1">Patience en cuve</span>
+                            <span class="text-[9px] block text-slate-400 font-black mb-1">Patience en cuve</span>
                             <div class="font-brand text-2xl text-white">52 Heures</div>
                         </div>
                         <div class="bg-transparent text-[#0B132B] p-6 border-2 border-[#0B132B]">
@@ -118,7 +108,7 @@
                         </div>
                     </div>
                     <div class="pt-4">
-                        <a href="catalogue.html" class="group inline-flex items-center gap-4 text-xs uppercase tracking-[0.25em] font-black text-[#0B132B] hover:text-[#E0A96D]">
+                        <a href="catalogue.html" class="group inline-flex items-center gap-4 text-xs uppercase tracking-[0.25em] font-black text-[#0B132B] hover:text-slate-500">
                             Voir ce qu'on vous a préparé ce matin <span class="text-xl transform group-hover:translate-x-3 transition-transform duration-200">→</span>
                         </a>
                     </div>
@@ -127,15 +117,14 @@
         </div>
     </section>
 
-    <!-- 📜 SECTION MANIFESTE (Piliers Asymétriques Bleu Nuit & Or Pur) -->
-    <section class="py-36 max-w-7xl mx-auto px-6 md:px-12 bg-[#0B132B]">
+    <!-- 📜 SECTION 3 [BLEUE] : SECTION MANIFESTE (Piliers Asymétriques Bleu Nuit & Or Pur) -->
+    <section class="py-36 max-w-7xl mx-auto px-6 md:px-12 bg-[#0B132B] border-b-3 border-[#E0A96D]">
         <div class="text-center max-w-2xl mx-auto mb-28 space-y-4">
             <span class="text-[#E0A96D] text-xs font-black uppercase tracking-[0.4em] block">Nos Secrets de Fabrication</span>
             <h2 class="text-4xl sm:text-5xl font-brand text-white tracking-tight leading-none">Pourquoi notre pain n'est pas comme les autres</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-0 border-3 border-[#E0A96D]">
-            <!-- Pilier 1 -->
-            <div class="p-10 bg-[#0B132B] border-b-3 md:border-b-0 md:border-r-3 border-[#E0A96D] space-y-6 hover:bg-slate-900/40 transition-colors">
+            <div class="p-10 bg-[#0B132B] border-b-3 md:border-b-0 md:border-r-3 border-[#E0A96D] space-y-6">
                 <div class="flex items-baseline gap-4">
                     <div class="text-[#E0A96D] font-brand text-4xl font-black">I.</div>
                     <h3 class="text-xs font-black text-white uppercase tracking-[0.25em]">Le Grain Respecté</h3>
@@ -144,85 +133,78 @@
                     Pas de cylindres en acier qui brûlent la farine. Nos grains sont écrasés lentement sur d’authentiques <span class="text-white font-bold">meules de pierre de silex</span>. Le germe du blé reste vivant, libérant ses vitamines et ses huiles aromatiques uniques.
                 </p>
             </div>
-            <!-- Pilier 2 (Inversion Chromatique Or Solaire Flashy) -->
             <div class="p-10 bg-[#E0A96D] text-[#0B132B] border-b-3 md:border-b-0 md:border-r-3 border-[#E0A96D] space-y-6">
                 <div class="flex items-baseline gap-4">
                     <div class="text-[#0B132B] font-brand text-4xl font-black">II.</div>
                     <h3 class="text-xs font-black text-[#0B132B] uppercase tracking-[0.25em]">Le Levain Sauvage</h3>
                 </div>
                 <p class="text-[#0B132B] text-xs md:text-sm leading-relaxed font-semibold">
-                    Ici, la levure chimique est bannie. Nous travaillons exclusivement avec notre <span class="underline font-black">levain chef naturel</span>, nouri chaque jour. C'est lui qui prédigère le gluten et donne au pain cette acidité subtile et cette texture si soyeuse.
+                    Ici, la levure chimique est bannie. Nous travaillons exclusivement avec notre <span class="underline font-black">levain chef naturel</span>, nourri chaque jour. C'est lui qui prédigère le gluten et donne au pain cette acidité subtile.
                 </p>
             </div>
-            <!-- Pilier 3 -->
-            <div class="p-10 bg-[#0B132B] space-y-6 hover:bg-slate-900/40 transition-colors">
+            <div class="p-10 bg-[#0B132B] space-y-6">
                 <div class="flex items-baseline gap-4">
                     <div class="text-[#E0A96D] font-brand text-4xl font-black">III.</div>
                     <h3 class="text-xs font-black text-white uppercase tracking-[0.25em]">Le Feu du Maître</h3>
                 </div>
                 <p class="text-slate-300 text-xs md:text-sm leading-relaxed font-light">
-                    Nos pains sont projetés directement sur les briques brûlantes de notre four à sole. Ce choc thermique saisit la pâte instantanément, créant une <span class="text-white font-bold">croûte ambrée et épaisse</span> qui enferme l'humidité de la mie pour une conservation parfaite.
+                    Nos pains sont projetés directement sur les briques brûlantes de notre four à sole. Ce choc thermique saisit la pâte instantanément, créant une <span class="text-white font-bold">croûte ambrée et épaisse</span>.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- ✨ L'AVIS DE LA CRITIQUE (Grille Magazine Bleu Électrique) -->
-    <section class="bg-[#0F1A3A] text-white py-36 border-t-3 border-b-3 border-[#E0A96D] relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <!-- ✨ SECTION 4 [BLANCHE] : L'AVIS DE LA CRITIQUE (Style Grille Magazine épurée) -->
+    <section class="bg-[#F4F5F6] text-[#0B132B] py-36 border-b-3 border-[#0B132B]">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center max-w-xl mx-auto mb-28 space-y-4">
-                <span class="text-[#E0A96D] text-xs font-black tracking-[0.4em] uppercase block">Ils en parlent mieux que nous</span>
-                <h2 class="text-4xl font-brand text-white tracking-tight">Les habitués du quartier témoignent</h2>
+                <span class="text-slate-400 text-xs font-black tracking-[0.4em] uppercase block">Ils en parlent mieux que nous</span>
+                <h2 class="text-4xl font-brand text-[#0B132B] tracking-tight">Les habitués du quartier témoignent</h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Avis 1 -->
-                <div class="border-2 border-white/10 bg-[#0B132B] p-10 flex flex-col justify-between space-y-8 hover:border-[#E0A96D] transition-all">
-                    <p class="text-slate-200 text-sm italic font-light leading-relaxed">
-                        "J'achète ma miche le samedi matin. Le mercredi d'après, coupée en tranches fines avec un peu de beurre salé, elle est <span class="text-[#E0A96D] font-bold">toujours aussi tendre et parfumée</span>. C’est du grand art."
+                <div class="border-2 border-[#0B132B]/10 bg-white p-10 flex flex-col justify-between space-y-8">
+                    <p class="text-slate-700 text-sm italic font-light leading-relaxed">
+                        "J'achète ma miche le samedi matin. Le mercredi d'après, coupée en tranches fines avec un peu de beurre salé, elle est <span class="text-[#0B132B] font-bold">toujours aussi tendre et parfumée</span>."
                     </p>
-                    <div class="pt-6 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-[11px] uppercase tracking-widest font-black text-white">Marc-Antoine K. <span class="text-slate-400 font-normal block text-[9px] normal-case tracking-normal">Habitant de la Rue Parmentier</span></span>
-                        <span class="text-[#E0A96D] text-xs font-bold tracking-widest">★★★★★</span>
+                    <div class="pt-6 border-t border-[#0B132B]/10 flex justify-between items-center">
+                        <span class="text-[11px] uppercase tracking-widest font-black text-[#0B132B]">Marc-Antoine K. <span class="text-slate-400 font-normal block text-[9px] normal-case tracking-normal">Rue Parmentier</span></span>
+                        <span class="text-[#0B132B] text-xs font-bold tracking-widest">★★★★★</span>
                     </div>
                 </div>
-                <!-- Avis 2 -->
-                <div class="border-2 border-white/10 bg-[#0B132B] p-10 flex flex-col justify-between space-y-8 hover:border-[#E0A96D] transition-all">
-                    <p class="text-slate-200 text-sm italic font-light leading-relaxed">
-                        "Je pensais être totalement intolérante au pain moderne. Ici, grâce au travail ancestral du levain naturel, je peux enfin <span class="text-[#E0A96D] font-bold">remanger du vrai pain</span> sans aucun souci. Ma digestion revit !"
+                <div class="border-2 border-[#0B132B]/10 bg-white p-10 flex flex-col justify-between space-y-8">
+                    <p class="text-slate-700 text-sm italic font-light leading-relaxed">
+                        "Je pensais être totalement intolérante au pain moderne. Ici, grâce au travail ancestral du levain naturel, je peux enfin <span class="text-[#0B132B] font-bold">remanger du vrai pain</span>."
                     </p>
-                    <div class="pt-6 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-[11px] uppercase tracking-widest font-black text-white">Hélène R. <span class="text-slate-400 font-normal block text-[9px] normal-case tracking-normal">Cliente fidèle depuis 2 ans</span></span>
-                        <span class="text-[#E0A96D] text-xs font-bold tracking-widest">★★★★★</span>
+                    <div class="pt-6 border-t border-[#0B132B]/10 flex justify-between items-center">
+                        <span class="text-[11px] uppercase tracking-widest font-black text-[#0B132B]">Hélène R. <span class="text-slate-400 font-normal block text-[9px] normal-case tracking-normal">Cliente fidèle depuis 2 ans</span></span>
+                        <span class="text-[#0B132B] text-xs font-bold tracking-widest">★★★★★</span>
                     </div>
                 </div>
-                <!-- Avis 3 -->
-                <div class="border-2 border-white/10 bg-[#0B132B] p-10 flex flex-col justify-between space-y-8 hover:border-[#E0A96D] transition-all">
-                    <p class="text-slate-200 text-sm italic font-light leading-relaxed">
-                        "Le niveau d'exigence est stupéfiant. La croûte a ce goût caramélisé presque torréfié inimitable, et l'intérieur reste sauvage et très frais. Une adresse indispensable à Paris."
+                <div class="border-2 border-[#0B132B]/10 bg-white p-10 flex flex-col justify-between space-y-8">
+                    <p class="text-slate-700 text-sm italic font-light leading-relaxed">
+                        "Le niveau d'exigence est stupéfiant. La croûte a ce goût caramélisé presque torréfié inimitable, et l'intérieur reste sauvage et très frais. Une adresse indispensable."
                     </p>
-                    <div class="pt-6 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-[11px] uppercase tracking-widest font-black text-white">Julien D. <span class="text-slate-400 font-normal block text-[9px] normal-case tracking-normal">Chef Cuisinier Paris 11</span></span>
-                        <span class="text-[#E0A96D] text-xs font-bold tracking-widest">★★★★★</span>
+                    <div class="pt-6 border-t border-[#0B132B]/10 flex justify-between items-center">
+                        <span class="text-[11px] uppercase tracking-widest font-black text-[#0B132B]">Julien D. <span class="text-slate-400 font-normal block text-[9px] normal-case tracking-normal">Chef Cuisinier Paris 11</span></span>
+                        <span class="text-[#0B132B] text-xs font-bold tracking-widest">★★★★★</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ❓ FOIRE AUX QUESTIONS (Monochrome Bleu Nuit Scellé d'Or) -->
-    <section class="bg-[#0B132B] py-36">
+    <!-- ❓ SECTION 5 [BLEUE] : FOIRE AUX QUESTIONS (Monochrome Bleu Nuit & Or) -->
+    <section class="bg-[#0B132B] py-36 border-b-3 border-[#E0A96D]">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-24 space-y-4">
                 <span class="text-[#E0A96D] text-xs font-black uppercase tracking-[0.4em] block">La Transparence de l'Artisan</span>
                 <h2 class="text-4xl font-brand text-white tracking-tight">Des réponses claires pour les passionnés</h2>
-                <p class="text-slate-400 text-xs font-normal tracking-wider uppercase">Nous n'avons rien à cacher, tout est dans l'amour du geste.</p>
             </div>
 
             <div class="space-y-4">
-                <!-- Question 1 -->
-                <div class="faq-item bg-[#0F1A3A] border-2 border-white/5 p-8 cursor-pointer transition-all hover:border-[#E0A96D]" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center text-white font-bold text-base tracking-wide">
+                <div class="faq-item bg-[#0F1A3A] border-2 border-white/5 p-8 cursor-pointer transition-all hover:border-[#E0A96D] text-white" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-base tracking-wide">
                         <h3>Pourquoi vos pains se gardent-ils plusieurs jours sans sécher ?</h3>
                         <span class="faq-icon text-[#E0A96D] text-xl font-bold">+</span>
                     </div>
@@ -231,71 +213,71 @@
                     </div>
                 </div>
 
-                <!-- Question 2 -->
-                <div class="faq-item bg-[#0F1A3A] border-2 border-white/5 p-8 cursor-pointer transition-all hover:border-[#E0A96D]" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center text-white font-bold text-base tracking-wide">
+                <div class="faq-item bg-[#0F1A3A] border-2 border-white/5 p-8 cursor-pointer transition-all hover:border-[#E0A96D] text-white" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-base tracking-wide">
                         <h3>D'où proviennent exactement vos farines ?</h3>
                         <span class="faq-icon text-[#E0A96D] text-xl font-bold">+</span>
                     </div>
                     <div class="faq-answer text-sm text-slate-300 font-light leading-relaxed">
-                        Nous achetons notre grain en direct à des paysans-meuniers passionnés situés à <span class="text-white font-bold">moins de 150 km de Paris</span>. Toutes nos céréales sont cultivées sans aucun pesticide de synthèse et sont certifiées Agriculture Biologique (AB). En éliminant les intermédiaires, nous assurons un revenu juste aux agriculteurs et une traçabilité totale pour vos papilles.
+                        Nous achetons notre grain en direct à des paysans-meuniers passionnés situés à moins de 150 km de Paris. Toutes nos céréales sont cultivées sans aucun pesticide de synthèse et sont certifiées Agriculture Biologique (AB). En éliminant les intermédiaires, nous assurons un revenu juste aux agriculteurs et une traçabilité totale pour vos papilles.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 📍 INFOS PRATIQUES (Double Bloc Choc : Bleu Sidéral vs Blanc Craie) -->
-    <section class="py-36 max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-0 border-3 border-[#E0A96D]">
-        <!-- Horaires (Bleu Profond) -->
-        <div class="bg-[#0B132B] text-white p-10 md:p-14 flex flex-col justify-between md:col-span-5 md:border-r-3 border-[#E0A96D]">
-            <div class="space-y-8">
+    <!-- 📍 SECTION 6 [BICOLORE - AFFINÉE] : INFOS PRATIQUES (Format Micro-élégant) -->
+    <section class="py-24 max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-0 border-3 border-[#E0A96D]">
+        <!-- Horaires Épurés & Affinés -->
+        <div class="bg-[#0B132B] text-white p-8 md:p-10 flex flex-col justify-between md:col-span-5 md:border-r-3 border-[#E0A96D]">
+            <div class="space-y-6">
                 <div>
-                    <span class="text-[#E0A96D] text-xs font-black uppercase tracking-[0.3em] block mb-2">Passez nous voir</span>
-                    <h2 class="text-3xl font-brand tracking-tight">Le Rythme du Fournil</h2>
+                    <span class="text-[#E0A96D] text-[10px] font-black uppercase tracking-[0.3em] block mb-1">Passez nous voir</span>
+                    <h2 class="text-xl font-brand tracking-tight text-white">Le Rythme du Fournil</h2>
                 </div>
-                <div class="space-y-4 text-xs md:text-sm font-bold tracking-widest uppercase">
-                    <div class="flex justify-between border-b border-white/10 pb-4">
+                <!-- Grille horaires réduite -->
+                <div class="space-y-3 text-[11px] font-bold tracking-widest uppercase">
+                    <div class="flex justify-between border-b border-white/10 pb-2">
                         <span class="text-slate-400">Lun - Ven</span>
-                        <span class="text-white text-base font-brand">07:00 — 20:00</span>
+                        <span class="text-white font-brand">07:00 — 20:00</span>
                     </div>
-                    <div class="flex justify-between border-b border-white/10 pb-4">
+                    <div class="flex justify-between border-b border-white/10 pb-2">
                         <span class="text-slate-400">Samedi</span>
-                        <span class="text-white text-base font-brand">07:30 — 19:30</span>
+                        <span class="text-white font-brand">07:30 — 19:30</span>
                     </div>
-                    <div class="flex justify-between items-center pt-2">
-                        <span class="text-slate-400">Dimanche</span>
-                        <span class="border-2 border-red-500 text-red-500 text-[9px] font-black uppercase tracking-[0.2em] px-4 py-2">Fermeture</span>
+                    <div class="flex justify-between items-center pt-1">
+                        <span class="text-slate-500">Dimanche</span>
+                        <span class="border border-red-500/50 text-red-400 text-[8px] font-black uppercase tracking-[0.15em] px-2 py-1">Fermeture</span>
                     </div>
                 </div>
             </div>
-            <div class="mt-12 pt-6 border-t border-white/10 text-xs text-slate-300 italic font-light leading-relaxed">
-                📢 **Conseil d'habitué** : Nos fournées spéciales sortent tout juste du four à <span class="text-[#E0A96D] font-bold">11h00</span> et <span class="text-[#E0A96D] font-bold">16h30</span>. C'est le meilleur moment pour venir chercher votre miche encore chaude !
+            <!-- Conseil d'habitué réduit -->
+            <div class="mt-8 pt-4 border-t border-white/10 text-[10px] text-slate-400 font-normal leading-relaxed">
+                📢 <strong class="text-[#E0A96D] font-bold uppercase tracking-wider text-[9px] mr-1">Conseil d'habitué :</strong> Nos fournées spéciales sortent tout juste du four à 11h00 et 16h30. C'est le meilleur moment pour venir chercher votre miche encore chaude !
             </div>
         </div>
 
-        <!-- Accès Map (Inversion Blanc Craie Lumineux) -->
-        <div class="bg-[#F4F5F6] text-[#0B132B] p-10 md:p-14 flex flex-col justify-between md:col-span-7">
-            <div class="space-y-4 mb-8">
+        <!-- Accès Map -->
+        <div class="bg-[#F4F5F6] text-[#0B132B] p-8 md:p-10 flex flex-col justify-between md:col-span-7">
+            <div class="space-y-3 mb-6">
                 <div>
-                    <span class="text-[#E0A96D] text-xs font-black uppercase tracking-[0.3em] block mb-2">Où nous trouver ?</span>
-                    <h2 class="text-3xl font-brand text-[#0B132B] tracking-tight">La Boutique de l'Atelier</h2>
+                    <span class="text-[#E0A96D] text-[10px] font-black uppercase tracking-[0.3em] block mb-1">Où nous trouver ?</span>
+                    <h2 class="text-xl font-brand text-[#0B132B] tracking-tight">La Boutique de l'Atelier</h2>
                 </div>
-                <div class="text-xs md:text-sm space-y-2 font-bold tracking-wide">
-                    <p class="text-[#0B132B] flex items-center gap-3 text-base">
+                <div class="text-[11px] space-y-1 font-bold tracking-wide">
+                    <p class="text-[#0B132B] flex items-center gap-2">
                         <span class="text-[#E0A96D]">📍</span> 42 Rue de la Levure, 75011 Paris
                     </p>
-                    <p class="text-slate-500 pl-7 text-xs font-normal">Accès direct par le Métro : Parmentier (Ligne 3) ou Oberkampf (Lignes 5 et 9)</p>
                 </div>
             </div>
-            <div class="w-full h-64 border-3 border-[#0B132B] overflow-hidden grayscale contrast-125">
+            <div class="w-full h-48 border-2 border-[#0B132B] overflow-hidden grayscale contrast-125">
                 <iframe class="w-full h-full" src="https://maps.google.com/maps?q=Paris%2075011&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
     <!-- 🎪 LE RUBAN DE FARINE (Bandeau d'Or Magnétique) -->
-    <div class="bg-[#E0A96D] text-[#0B132B] py-8 overflow-hidden border-t-3 border-b-3 border-[#0B132B] uppercase tracking-[0.35em] text-xs font-black mt-20">
+    <div class="bg-[#E0A96D] text-[#0B132B] py-6 overflow-hidden border-t-3 border-b-3 border-[#0B132B] uppercase tracking-[0.35em] text-[10px] font-black mt-20">
         <div class="animate-ruban whitespace-nowrap flex items-center gap-24">
             <span>🌾 Meule de pierre en silex</span>
             <span class="text-white">★ Levain Sauvage Vivant</span>
@@ -308,13 +290,14 @@
         </div>
     </div>
 
-    <!-- 🏷️ FOOTER (Bloc Royal Massif) -->
-    <footer class="bg-[#0B132B] text-slate-400 text-center py-24 text-xs font-light mt-auto relative z-10">
-        <div class="max-w-7xl mx-auto px-6 space-y-6">
-            <p class="tracking-[0.4em] uppercase text-[13px] font-black text-white">Maison L'Atelier du Grain — © 2026</p>
-            <div class="w-24 h-[3px] bg-[#E0A96D] mx-auto"></div>
-            <p class="text-slate-300 text-[11px] max-w-xl mx-auto leading-relaxed tracking-wider font-normal">
-                Manufacture artisanale enregistrée au Répertoire des Métiers de Paris.<br>L'excellence, la transparence et le respect absolu du vivant au service du goût originel.
+    <!-- 🏷️ FOOTER (Bloc Minimaliste & Discret Réduit) -->
+    <footer class="bg-[#0B132B] text-slate-500 text-center py-16 mt-auto relative z-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 space-y-3">
+            <p class="tracking-[0.3em] uppercase text-[10px] font-black text-white">Maison L'Atelier du Grain — © 2026</p>
+            <div class="w-12 h-[1px] bg-[#E0A96D]/60 mx-auto"></div>
+            <p class="text-slate-400 text-[10px] max-w-xl mx-auto leading-relaxed tracking-wide font-normal">
+                Manufacture artisanale enregistrée au Répertoire des Métiers de Paris.<br>
+                <span class="text-slate-500 text-[9px] opacity-80 block mt-1">L'excellence, la transparence et le respect absolu du vivant au service du goût originel.</span>
             </p>
         </div>
     </footer>

@@ -3,164 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Atelier du Grain | Haute Boulangerie</title>
+    <title>L'Atelier du Grain | Artisan Boulanger Paris</title>
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Polices Ultra-Lisibles et Modernes -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Typographies professionnelles et lisibles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
         
-        /* FAQ Interactive Fluide */
+        /* Animation FAQ pro et fluide */
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, opacity 0.2s ease; opacity: 0; }
-        .faq-item.active .faq-answer { max-height: 200px; opacity: 1; margin-top: 16px; }
+        .faq-item.active .faq-answer { max-height: 200px; opacity: 1; margin-top: 12px; }
         .faq-icon { transition: transform 0.3s ease; }
-        .faq-item.active .faq-icon { transform: rotate(45deg); }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
     </style>
 </head>
-<body class="bg-[#f3f4f6] text-[#0f172a] antialiased p-3 md:p-6 min-h-screen flex flex-col justify-between">
+<body class="bg-[#fcfbf9] text-slate-800 antialiased flex flex-col min-h-screen">
 
-    <!-- ⚡ BARRE DE NAVIGATION MODERNE FLOATTANTE -->
-    <nav class="w-full max-w-6xl mx-auto bg-[#0f172a] text-white rounded-2xl p-4 flex justify-between items-center shadow-2xl sticky top-6 z-50 border border-white/10 backdrop-blur-md bg-opacity-95">
-        <a href="index.html" class="font-heading font-bold text-lg md:text-xl tracking-tight pl-2 flex items-center gap-2">
-            <span class="w-3 h-3 bg-[#f59e0b] rounded-full animate-pulse"></span>
-            L'Atelier du Grain
-        </a>
-        <div class="hidden md:flex bg-white/5 rounded-xl p-1 border border-white/5 font-medium text-xs tracking-wide">
-            <a href="index.html" class="bg-[#f59e0b] text-[#0f172a] px-4 py-2 rounded-lg font-semibold transition">Accueil</a>
-            <a href="propos.html" class="px-4 py-2 text-stone-300 hover:text-white transition">La Maison</a>
-            <a href="catalogue.html" class="px-4 py-2 text-stone-300 hover:text-white transition">Collection</a>
-            <a href="album.html" class="px-4 py-2 text-stone-300 hover:text-white transition">Galerie</a>
-            <a href="contact.html" class="px-4 py-2 text-stone-300 hover:text-white transition">Contact</a>
+    <!-- 🌐 BARRE DE NAVIGATION PROFESSIONNELLE -->
+    <nav class="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-xs">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logo / Identité -->
+            <a href="index.html" class="font-serif text-xl md:text-2xl font-medium tracking-wide text-slate-900">
+                L'Atelier du Grain
+            </a>
+            
+            <!-- Liens de navigation épurés -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="text-[#b58953] border-b-2 border-[#b58953] py-2">Accueil</a>
+                <a href="propos.html" class="text-slate-500 hover:text-slate-900 transition">La Maison</a>
+                <a href="catalogue.html" class="text-slate-500 hover:text-slate-900 transition">Notre Collection</a>
+                <a href="album.html" class="text-slate-500 hover:text-slate-900 transition">Galerie</a>
+                <a href="contact.html" class="text-slate-500 hover:text-slate-900 transition">Contact</a>
+            </div>
+
+            <!-- Bouton d'action pro -->
+            <div class="hidden sm:block">
+                <a href="contact.html" class="bg-[#1e293b] hover:bg-[#334155] text-white text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded-md transition shadow-xs">
+                    Nous contacter
+                </a>
+            </div>
         </div>
-        <a href="contact.html" class="bg-white text-[#0f172a] hover:bg-[#f59e0b] hover:text-[#0f172a] font-semibold text-xs px-5 py-2.5 rounded-xl transition dynamic-shadow hidden sm:inline-block">
-            Commander →
-        </a>
     </nav>
 
-    <!-- 🥖 HERO SECTION BLOCK -->
-    <header class="w-full max-w-6xl mx-auto bg-[#0f172a] rounded-3xl mt-6 overflow-hidden relative min-h-[70vh] flex items-center border border-black shadow-xl">
-        <div class="absolute inset-0 opacity-40 mix-blend-overlay">
+    <!-- 🥖 HERO SECTION : Chaleureuse et Institutionnelle -->
+    <header class="relative h-[65vh] flex items-center bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-50">
             <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600" class="w-full h-full object-cover">
         </div>
-        <div class="relative z-10 p-8 md:p-16 max-w-2xl text-white space-y-6">
-            <span class="bg-[#f59e0b] text-[#0f172a] font-heading font-bold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full inline-block">
-                ★ HAUTE BOULANGERIE FRANÇAISE
-            </span>
-            <h1 class="text-4xl md:text-6xl font-heading font-bold leading-tight tracking-tighter">
-                Le goût du vrai pain, <br><span class="text-[#f59e0b]">sans compromis.</span>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full text-white">
+            <span class="text-[#d4af37] font-semibold text-xs uppercase tracking-widest block mb-3">Artisanat de Confiance</span>
+            <h1 class="text-4xl md:text-6xl font-serif font-medium leading-tight max-w-3xl tracking-wide">
+                Le respect du savoir-faire,<br><span class="italic font-normal text-stone-200">l'excellence au quotidien.</span>
             </h1>
-            <p class="text-stone-300 text-sm md:text-base font-normal leading-relaxed">
-                Fermentation lente de 48 heures au levain sauvage et farines bio locales. Un retour à l'essentiel pour un pain hautement digeste et savoureux.
+            <p class="text-slate-300 text-sm md:text-base max-w-xl font-light mt-4 leading-relaxed">
+                Des farines biologiques sélectionnées, une fermentation lente sur levain naturel et une cuisson maîtrisée pour offrir un pain d'exception.
             </p>
-            <div class="pt-4">
-                <a href="catalogue.html" class="bg-[#f59e0b] text-[#0f172a] font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg hover:bg-white transition inline-block">
-                    Découvrir les produits
+            <div class="mt-8">
+                <a href="catalogue.html" class="bg-[#b58953] hover:bg-[#a37644] text-white font-medium text-sm px-6 py-3 rounded-md transition inline-block shadow-sm">
+                    Consulter la gamme
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- ⚡ ACCÈS RAPIDE / CHIFFRES CLÉS -->
-    <section class="w-full max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mt-6">
-        <div class="bg-white p-8 rounded-3xl border-2 border-[#0f172a] shadow-[4px_4px_0px_0px_#0f172a] space-y-2">
-            <div class="text-3xl font-heading font-bold text-[#f59e0b]">100%</div>
-            <h3 class="font-heading font-bold text-lg">Levain Sauvage</h3>
-            <p class="text-xs text-stone-600 leading-relaxed">Aucune levure chimique. Une digestion parfaite et une conservation optimale pendant une semaine.</p>
-        </div>
-        <div class="bg-white p-8 rounded-3xl border-2 border-[#0f172a] shadow-[4px_4px_0px_0px_#0f172a] space-y-2">
-            <div class="text-3xl font-heading font-bold text-[#f59e0b]">48h</div>
-            <h3 class="font-heading font-bold text-lg">De Fermentation</h3>
-            <p class="text-xs text-stone-600 leading-relaxed">Le temps nécessaire pour laisser les arômes naturels de noisette et de blé se développer pleinement.</p>
-        </div>
-        <div class="bg-white p-8 rounded-3xl border-2 border-[#0f172a] shadow-[4px_4px_0px_0px_#0f172a] space-y-2">
-            <div class="text-3xl font-heading font-bold text-[#f59e0b]">Bio</div>
-            <h3 class="font-heading font-bold text-lg">Farines de Meule</h3>
-            <p class="text-xs text-stone-600 leading-relaxed">Des céréales anciennes moulues sur pierre, issues de circuits courts et de producteurs engagés.</p>
-        </div>
-    </section>
-
-    <!-- ❓ SECTION FAQ EXTÊMEMENT LISIBLE -->
-    <section class="w-full max-w-6xl mx-auto bg-white rounded-3xl p-8 md:p-12 border-2 border-[#0f172a] shadow-[6px_6px_0px_0px_#0f172a] mt-6">
-        <div class="max-w-3xl mb-10">
-            <span class="text-[#f59e0b] font-bold text-xs uppercase tracking-wider block mb-2">// FOIRE AUX QUESTIONS</span>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold tracking-tight">Des questions ? On vous répond.</h2>
-        </div>
-
-        <div class="space-y-4">
-            <!-- Question 1 -->
-            <div class="faq-item border-2 border-[#0f172a] bg-[#fdfdfd] p-5 rounded-2xl cursor-pointer hover:bg-stone-50 transition" onclick="toggleFaq(this)">
-                <div class="flex justify-between items-center text-sm md:text-base font-bold text-[#0f172a]">
-                    <h3>Qu'est-ce qui rend votre pain plus digeste ?</h3>
-                    <span class="faq-icon text-lg bg-[#0f172a] text-white w-6 h-6 flex items-center justify-center rounded-full">+</span>
+    <!-- SECTION ENGAGEMENTS : Grid Épurée -->
+    <section class="py-20 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div class="space-y-3">
+                <div class="w-10 h-10 bg-[#fbf7f2] flex items-center justify-center rounded-lg">
+                    <span class="text-[#b58953] font-serif text-lg font-bold">01</span>
                 </div>
-                <div class="faq-answer text-xs md:text-sm text-stone-600 font-normal leading-relaxed">
-                    C'est le travail du levain naturel combiné à une fermentation de 48h. Les bactéries lactiques ont le temps de "manger" et de décomposer le gluten complexe en acides aminés simples. Votre estomac fait moitié moins de travail !
-                </div>
+                <h3 class="text-lg font-semibold text-slate-900">Ingrédients Locaux & Bio</h3>
+                <p class="text-sm text-slate-600 leading-relaxed font-light">Nous travaillons main dans la main avec des agriculteurs régionaux pour garantir des farines de meule d'une pureté totale.</p>
             </div>
-
-            <!-- Question 2 -->
-            <div class="faq-item border-2 border-[#0f172a] bg-[#fdfdfd] p-5 rounded-2xl cursor-pointer hover:bg-stone-50 transition" onclick="toggleFaq(this)">
-                <div class="flex justify-between items-center text-sm md:text-base font-bold text-[#0f172a]">
-                    <h3>Comment conserver au mieux vos miches de pain ?</h3>
-                    <span class="faq-icon text-lg bg-[#0f172a] text-white w-6 h-6 flex items-center justify-center rounded-full">+</span>
+            <div class="space-y-3">
+                <div class="w-10 h-10 bg-[#fbf7f2] flex items-center justify-center rounded-lg">
+                    <span class="text-[#b58953] font-serif text-lg font-bold">02</span>
                 </div>
-                <div class="faq-answer text-xs md:text-sm text-stone-600 font-normal leading-relaxed">
-                    Évitez absolument le plastique qui ramollit la croûte. L'idéal est de laisser le pain dans son sachet en papier d'origine ou de l'envelopper dans un torchon en coton propre, placé dans un endroit sec. Il restera frais pendant 5 à 7 jours.
+                <h3 class="text-lg font-semibold text-slate-900">Fermentation Naturelle</h3>
+                <p class="text-sm text-slate-600 leading-relaxed font-light">Notre levain maison confère au pain une conservation optimale et développe des arômes uniques, sans aucun additif.</p>
+            </div>
+            <div class="space-y-3">
+                <div class="w-10 h-10 bg-[#fbf7f2] flex items-center justify-center rounded-lg">
+                    <span class="text-[#b58953] font-serif text-lg font-bold">03</span>
                 </div>
+                <h3 class="text-lg font-semibold text-slate-900">Tradition Transparente</h3>
+                <p class="text-sm text-slate-600 leading-relaxed font-light">Chaque étape du façonnage à la cuisson est réalisée sous vos yeux au sein de notre atelier ouvert du 11ème.</p>
             </div>
         </div>
     </section>
 
-    <!-- 📍 INFOS PRATIQUES & PLAN (Ultra Clairs) -->
-    <section class="w-full max-w-6xl mx-auto grid md:grid-cols-2 gap-6 mt-6">
-        <!-- Bloc Horaires -->
-        <div class="bg-[#0f172a] text-white p-8 md:p-12 rounded-3xl space-y-6 flex flex-col justify-between">
-            <div>
-                <span class="text-[#f59e0b] text-xs font-bold uppercase tracking-wider block mb-2">// PLANIFICATION</span>
-                <h2 class="text-3xl font-heading font-bold">Horaires d'Ouverture</h2>
+    <!-- ❓ SECTION FAQ : Accordéon Corporate Élégant -->
+    <section class="py-20 bg-[#fcfbf9] border-b border-slate-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-[#b58953] text-xs font-semibold uppercase tracking-wider block mb-2">Foire Aux Questions</span>
+                <h2 class="text-3xl font-serif font-medium text-slate-900">Des réponses claires à vos questions</h2>
             </div>
-            
-            <div class="space-y-4 text-xs md:text-sm font-medium">
-                <div class="flex justify-between border-b border-white/10 pb-3">
-                    <span class="text-stone-400">Lundi au Vendredi</span>
-                    <span class="text-white font-bold">07:00 — 20:00</span>
-                </div>
-                <div class="flex justify-between border-b border-white/10 pb-3">
-                    <span class="text-stone-400">Samedi</span>
-                    <span class="text-white font-bold">07:30 — 19:30</span>
-                </div>
-                <div class="flex justify-between text-stone-500">
-                    <span>Dimanche</span>
-                    <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide">Fermé</span>
-                </div>
-            </div>
-            <p class="text-[11px] text-stone-400 bg-white/5 p-3 rounded-xl border border-white/5">
-                💡 <b>Astuce :</b> Nos fournées de traditions chaudes sortent tous les jours à 11h30 et 17h00.
-            </p>
-        </div>
 
-        <!-- Bloc Localisation -->
-        <div class="bg-white p-8 rounded-3xl border-2 border-[#0f172a] shadow-[4px_4px_0px_0px_#0f172a] space-y-4">
-            <div>
-                <span class="text-[#f59e0b] text-xs font-bold uppercase tracking-wider block mb-1">// ADRESSE</span>
-                <h2 class="text-2xl font-heading font-bold">Venir au Fournil</h2>
-            </div>
-            <div class="text-xs md:text-sm space-y-1 text-stone-600">
-                <p class="text-[#0f172a] font-bold">📍 42 Rue de la Levure, 75011 Paris</p>
-                <p>🚇 Métro : Parmentier (L3) ou Oberkampf (L5, L9)</p>
-            </div>
-            <!-- Carte simple, contrastée, propre -->
-            <div class="w-full h-48 border border-stone-200 rounded-2xl overflow-hidden shadow-inner">
-                <iframe class="w-full h-full" src="https://maps.google.com/maps?q=Paris%2075011&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
+            <div class="space-y-3">
+                <!-- Question 1 -->
+                <div class="faq-item bg-white border border-slate-200/60 rounded-xl p-5 cursor-pointer shadow-2xs hover:border-slate-300 transition" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center text-slate-900 font-medium text-sm md:text-base">
+                        <h3>Vos pains sont-ils adaptés aux personnes sensibles au gluten ?</h3>
+                        <span class="faq-icon text-slate-400 text-sm">▼</span>
+                    </div>
+                    <div class="faq-answer text-xs md:text-sm text-slate-600 font-light leading-relaxed">
+                        Bien que nos farines contiennent du gluten, notre fermentation longue de 24 à 48 heures au levain naturel permet de dégrader une grande partie des protéines de gluten, rendant nos pains beaucoup plus digestes que les pains industriels.
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item bg-white border border-slate-200/60 rounded-xl p-5 cursor-pointer shadow-2xs hover:border-slate-300 transition" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center text-slate-900 font-medium text-sm md:text-base">
+                        <h3>Comment conserver au mieux votre pain au levain ?</h3>
+                        <span class="faq-icon text-slate-400 text-sm">▼</span>
+                    </div>
+                    <div class="faq-answer text-xs md:text-sm text-slate-600 font-light leading-relaxed">
+                        Grâce à l’acidité naturelle du levain, nos pains se conservent parfaitement entre 4 et 6 jours. Nous vous conseillons de les garder enveloppés dans un torchon propre en coton ou en lin, dans un endroit sec à température ambiante.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER CLAIR -->
-    <footer class="w-full max-w-6xl mx-auto bg-[#0f172a] text-stone-400 text-center py-8 rounded-2xl mt-6 text-xs font-medium border border-white/10">
-        <p>Maison L'Atelier du Grain — © 2026 | Tous droits réservés.</p>
+    <!-- 📍 INFOS PRATIQUES & LOCALISATION (Impeccable) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
+            <!-- Bloc Horaires -->
+            <div class="bg-[#1e293b] text-white p-8 md:p-10 rounded-2xl shadow-sm space-y-6">
+                <div>
+                    <span class="text-[#d4af37] text-xs font-semibold uppercase tracking-wider block mb-1">Horaires</span>
+                    <h2 class="text-2xl font-serif font-medium">Nos ouvertures</h2>
+                </div>
+                
+                <div class="space-y-3 text-sm font-light text-slate-300">
+                    <div class="flex justify-between border-b border-slate-700 pb-2">
+                        <span>Lundi — Vendredi</span>
+                        <span class="font-semibold text-white">07:00 — 20:00</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-700 pb-2">
+                        <span>Samedi</span>
+                        <span class="font-semibold text-white">07:30 — 19:30</span>
+                    </div>
+                    <div class="flex justify-between text-slate-500">
+                        <span>Dimanche</span>
+                        <span class="bg-red-500/10 text-red-400 px-2.5 py-0.5 rounded text-xs font-medium">Fermé</span>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 italic">
+                    Note : Pour vos commandes spécifiques ou de volumes importants, merci de nous contacter 48 heures à l'avance.
+                </p>
+            </div>
+
+            <!-- Bloc Plan d'accès -->
+            <div class="space-y-6">
+                <div>
+                    <span class="text-[#b58953] text-xs font-semibold uppercase tracking-wider block mb-1">Localisation</span>
+                    <h2 class="text-2xl font-serif font-medium text-slate-900">Venir à la boutique</h2>
+                </div>
+                <div class="text-sm space-y-2 text-slate-600 font-light">
+                    <p class="text-slate-900 font-medium">📍 42 Rue de la Levure, 75011 Paris</p>
+                    <p>🚇 Accès Métro : Parmentier (Ligne 3) ou Oberkampf (Lignes 5 et 9)</p>
+                </div>
+                <!-- Google Maps Épuré -->
+                <div class="w-full h-56 border border-slate-200 rounded-xl overflow-hidden shadow-xs">
+                    <iframe class="w-full h-full" src="https://maps.google.com/maps?q=Paris%2075011&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUTIONNEL -->
+    <footer class="bg-[#1e293b] text-slate-400 text-center py-10 text-xs font-light mt-auto border-t border-slate-800">
+        <p class="tracking-wide">Maison L'Atelier du Grain — © 2026</p>
+        <p class="text-slate-500 text-[11px] mt-1">Artisans boulangers inscrits à la Chambre des Métiers de Paris.</p>
     </footer>
 
     <!-- SCRIPT ACCORDÉON -->

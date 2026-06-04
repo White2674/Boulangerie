@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier du Grain | Boulangerie Artisanale</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Animation de fumée subtile pour le pain au survol */
+        @keyframes smoke {
+            0% { transform: translateY(0) scale(1); opacity: 0.5; }
+            50% { transform: translateY(-5px) scale(1.1); opacity: 0.8; }
+            100% { transform: translateY(-10px) scale(1.2); opacity: 0; }
+        }
+        .smoke-effect:hover .bakery-smoke {
+            animation: smoke 1.5s ease-in-out infinite;
+        }
+        /* Mode sombre personnalisé */
+        .dark body { background-color: #121212; color: #e5e7eb; }
+        .dark .bg-white { background-color: #1e1e1e; color: #ffffff; }
+        .dark .text-gray-600 { color: #9ca3af; }
+        .dark .bg-gray-50 { background-color: #2d2d2d; }
+    </style>
+</head>
+<body class="bg-amber-50/30 text-stone-800 font-sans transition-colors duration-300">
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm px-6 py-4 flex justify-between items-center transition-colors duration-300">
+        <a href="#" class="text-2xl font-serif font-bold text-amber-700 tracking-wide">🌾 L'Atelier du Grain</a>
+        
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#accueil" class="hover:text-amber-600 transition">Accueil</a>
+            <a href="#menu" class="hover:text-amber-600 transition">Le Menu</a>
+            <a href="#histoire" class="hover:text-amber-600 transition">Notre Histoire</a>
+            <a href="#contact" class="hover:text-amber-600 transition">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <div id="status-badge" class="px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-xs">
+                <span class="h-2 w-2 rounded-full animate-pulse"></span>
+                <span id="status-text">Calcul...</span>
+            </div>
+            
+            <button id="theme-toggle" class="text-xl hover:text-amber-600 transition" aria-label="Changer de thème">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button onclick="toggleCart()" class="relative p-2 text-xl hover:text-amber-600 transition">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span id="cart-count" class="absolute -top-1 -right-1 bg-amber-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="accueil" class="relative h-[70vh] flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200');">
+        <div class="text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-md">L'art du pain croustillant, chaque matin.</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto font-light">Des ingrédients biologiques, du levain naturel et beaucoup d'amour.</p>
+            <a href="#menu" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition shadow-md">Découvrir le Menu</a>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-1 bg-amber-100 dark:bg-amber-950/40 p-6 rounded-2xl border border-amber-200/60 relative overflow-hidden smoke-effect shadow-xs">
+                <div class="absolute top-2 right-2 text-amber-600 text-xs font-bold bg-amber-200 dark:bg-amber-900 px-2 py-1 rounded">⭐ Vedette</div>
+                <h3 class="text-xl font-serif font-bold text-amber-900 dark:text-amber-300 mb-2">Le Pain de la Semaine</h3>
+                <p class="font-semibold text-lg text-stone-800 dark:text-white mb-2">Seigle aux figues & noix</p>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Parfait pour accompagner vos plateaux de fromages ou vos petits-déjeuners gourmands.</p>
+                <span class="text-xl font-bold text-amber-700 dark:text-amber-400">5,20 €</span>
+                <i class="fa-solid fa-bread-slice bakery-smoke absolute bottom-4 right-6 text-5xl text-amber-800/10 dark:text-white/5 transition-all"></i>
+            </div>
+
+            <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-white p-6 rounded-2xl text-center shadow-xs">
+                    <i class="fa-solid fa-seedling text-3xl text-emerald-600 mb-3"></i>
+                    <h4 class="font-bold mb-1">Farine 100% Bio</h4>
+                    <p class="text-xs text-gray-600">Des céréales locales issues de l'agriculture biologique.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center shadow-xs">
+                    <i class="fa-solid fa-hourglass-start text-3xl text-amber-600 mb-3"></i>
+                    <h4 class="font-bold mb-1">Levain Naturel</h4>
+                    <p class="text-xs text-gray-600">Une fermentation lente de 24h pour plus de saveurs.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center shadow-xs">
+                    <i class="fa-solid fa-hand-holding-heart text-3xl text-red-500 mb-3"></i>
+                    <h4 class="font-bold mb-1">Fait Maison</h4>
+                    <p class="text-xs text-gray-600">Tout est façonné à la main par nos artisans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="bg-gray-50 dark:bg-zinc-900/50 py-16 px-6 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-serif font-bold text-center mb-2">Notre Catalogue Gourmand</h2>
+            <p class="text-center text-gray-600 mb-8">Faites votre choix parmi nos créations du jour</p>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="filter-buttons">
+                <button onclick="filterCategory('tous')" class="filter-btn active bg-amber-600 text-white px-5 py-2 rounded-full font-medium text-sm transition shadow-xs cursor-pointer">Tous</button>
+                <button onclick="filterCategory('pains')" class="filter-btn bg-white dark:bg-zinc-800 text-stone-700 dark:text-white hover:bg-amber-100 px-5 py-2 rounded-full font-medium text-sm transition shadow-xs cursor-pointer">Pains</button>
+                <button onclick="filterCategory('viennoiseries')" class="filter-btn bg-white dark:bg-zinc-800 text-stone-700 dark:text-white hover:bg-amber-100 px-5 py-2 rounded-full font-medium text-sm transition shadow-xs cursor-pointer">Viennoiseries</button>
+                <button onclick="filterCategory('patisseries')" class="filter-btn bg-white dark:bg-zinc-800 text-stone-700 dark:text-white hover:bg-amber-100 px-5 py-2 rounded-full font-medium text-sm transition shadow-xs cursor-pointer">Pâtisseries</button>
+                <button onclick="filterCategory('snacking')" class="filter-btn bg-white dark:bg-zinc-800 text-stone-700 dark:text-white hover:bg-amber-100 px-5 py-2 rounded-full font-medium text-sm transition shadow-xs cursor-pointer">Snacking</button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="products-grid">
+                </div>
+        </div>
+    </section>
+
+    <section id="histoire" class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="text-amber-600 font-bold uppercase tracking-wider text-sm">Tradition & Passion</span>
+            <h2 class="text-3xl font-serif font-bold mt-2 mb-4">Rencontrez le Maître Boulanger</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                Après 15 ans passés à parcourir la France pour redécouvrir les blés anciens, <strong>Jean-Pierre Grain</strong> a posé ses valises pour créer <em>L'Atelier du Grain</em>. Son secret ? Le temps, le respect du produit et une eau pure filtrée.
+            </p>
+            <blockquote class="border-l-4 border-amber-600 pl-4 italic text-stone-600 dark:text-stone-400 my-4">
+                "Le bon pain ne ment pas. Il croustille sous le doigt, il embaume la pièce et il nourrit l'âme."
+            </blockquote>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=400" alt="Pétrissage" class="rounded-xl shadow-md object-cover h-48 w-full hover:scale-105 transition duration-300">
+            <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=400" alt="Cuisson" class="rounded-xl shadow-md object-cover h-48 w-full mt-6 hover:scale-105 transition duration-300">
+        </div>
+    </section>
+
+    <section id="contact" class="bg-gray-50 dark:bg-zinc-900/50 py-16 px-6 border-t border-gray-100 dark:border-zinc-800">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+            <div class="bg-white p-8 rounded-2xl shadow-xs">
+                <h3 class="text-2xl font-serif font-bold mb-4">Nous Contacter</h3>
+                <form onsubmit="event.preventDefault(); alert('Message envoyé avec succès !');" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1 uppercase tracking-wide">Nom complet</label>
+                        <input type="text" required class="w-full p-3 rounded-lg border border-gray-200 dark:bg-zinc-800 dark:border-zinc-700 outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1 uppercase tracking-wide">Email</label>
+                        <input type="email" required class="w-full p-3 rounded-lg border border-gray-200 dark:bg-zinc-800 dark:border-zinc-700 outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1 uppercase tracking-wide">Message (Commande spéciale...)</label>
+                        <textarea rows="4" required class="w-full p-3 rounded-lg border border-gray-200 dark:bg-zinc-800 dark:border-zinc-700 outline-none focus:border-amber-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold p-3 rounded-lg transition cursor-pointer shadow-xs">Envoyer la demande</button>
+                </form>
+            </div>
+
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-2">Où nous trouver ?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4"><i class="fa-solid fa-location-dot text-amber-600 mr-2"></i> 42 Rue de la Levure, 75011 Paris</p>
+                    <div class="flex space-x-4 mb-6 text-xl">
+                        <a href="#" class="hover:text-amber-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-amber-600 transition"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-amber-600 transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-md border dark:border-zinc-700">
+                    <iframe class="w-full h-full grayscale dark:invert" src="https://maps.google.com/maps?q=Paris%2075011&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-amber-50 dark:bg-zinc-900">
+            <h3 class="text-xl font-bold font-serif"><i class="fa-solid fa-basket-shopping text-amber-600 mr-2"></i>Votre Panier</h3>
+            <button onclick="toggleCart()" class="text-gray-500 hover:text-red-500 text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div id="cart-items" class="p-6 space-y-4 overflow-y-auto flex-1">
+            </div>
+
+        <div class="p-6 border-t border-gray-100 space-y-4 bg-gray-50 dark:bg-zinc-900/70">
+            <div class="flex justify-between font-bold text-lg">
+                <span>Total :</span>
+                <span id="cart-total">0,00 €</span>
+            </div>
+            
+            <div>
+                <label class="block text-xs font-bold mb-1 uppercase text-gray-500">Heure de retrait souhaitée</label>
+                <input type="datetime-local" id="pickup-time" required class="w-full p-2 bg-white dark:bg-zinc-800 rounded border border-gray-200 outline-none text-sm">
+            </div>
+
+            <button onclick="checkoutSimulation()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg transition cursor-pointer shadow-xs">
+                Simuler le Paiement
+            </button>
+        </div>
+    </div>
+
+    <footer class="bg-stone-900 text-stone-400 text-center py-6 text-sm border-t border-stone-800">
+        <p>© 2026 L'Atelier du Grain - Réalisé pour Portfolio Développeur</p>
+    </footer>
+
+    <script>
+        // 1. DATA DES PRODUITS
+        const products = [
+            { id: 1, name: "Baguette Tradition", category: "pains", price: 1.20, tag: "Best-seller", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=200" },
+            { id: 2, name: "Pain Complet au Lin", category: "pains", price: 3.40, tag: "Bio", img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=200" },
+            { id: 3, name: "Croissant au Beurre", category: "viennoiseries", price: 1.35, tag: "Best-seller", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=200" },
+            { id: 4, name: "Pain au Chocolat", category: "viennoiseries", price: 1.45, tag: "Gourmand", img: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=200" },
+            { id: 5, name: "Éclair au Chocolat", category: "patisseries", price: 3.80, tag: "Classique", img: "https://images.unsplash.com/photo-1612203985029-e6786b224304?q=80&w=200" },
+            { id: 6, name: "Tartelette aux Fraises", category: "patisseries", price: 4.50, tag: "Saison", img: "https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=200" },
+            { id: 7, name: "Sandwich Le Parisien", category: "snacking", price: 5.20, tag: "Frais", img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=200" },
+            { id: 8, name: "Quiche Lorraine", category: "snacking", price: 4.80, tag: "Sans Porc dispo", img: "https://images.unsplash.com/photo-1602416044738-9cb54cc92095?q=80&w=200" }
+        ];
+
+        let cart = JSON.parse(localStorage.getItem('bakery-cart')) || [];
+
+        // 2. RENDU DES PRODUITS & FILTRES DYNAMIQUES
+        function renderProducts(filter = 'tous') {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+            
+            const filtered = filter === 'tous' ? products : products.filter(p => p.category === filter);
+
+            filtered.forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-white dark:bg-zinc-800 rounded-2xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+                        <div class="relative">
+                            <img src="${p.img}" alt="${p.name}" class="w-full h-40 object-cover">
+                            ${p.tag ? `<span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">${p.tag}</span>` : ''}
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-md mb-1">${p.name}</h3>
+                                <p class="text-amber-700 dark:text-amber-400 font-bold mb-4">${p.price.toFixed(2)} €</p>
+                            </div>
+                            <button onclick="addToCart(${p.id})" class="w-full bg-amber-50 dark:bg-zinc-700/50 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 transition text-amber-800 dark:text-amber-300 font-semibold text-sm py-2 rounded-xl flex items-center justify-center gap-2 cursor-pointer">
+                                <i class="fa-solid fa-plus text-xs"></i> Ajouter
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterCategory(cat) {
+            renderProducts(cat);
+            // Update active styling
+            document.querySelectorAll('#filter-buttons button').forEach(btn => {
+                btn.classList.remove('bg-amber-600', 'text-white');
+                btn.classList.add('bg-white', 'dark:bg-zinc-800', 'text-stone-700', 'dark:text-white');
+            });
+            event.currentTarget.classList.remove('bg-white', 'dark:bg-zinc-800', 'text-stone-700', 'dark:text-white');
+            event.currentTarget.classList.add('bg-amber-600', 'text-white');
+        }
+
+        // 3. STATUT DE L'HEURE EN TEMPS RÉEL (Badge ouvert / fermé)
+        function updateStoreStatus() {
+            const badge = document.getElementById('status-badge');
+            const text = document.getElementById('status-text');
+            const dot = badge.querySelector('span');
+            
+            const now = new Date();
+            const hour = now.getHours();
+            
+            // Ouvert de 7h à 13h et de 15h à 20h
+            const isOpen = (hour >= 7 && hour < 13) || (hour >= 15 && hour < 20);
+
+            if (isOpen) {
+                badge.className = "px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-xs bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-400";
+                dot.className = "h-2 w-2 rounded-full bg-emerald-500 animate-pulse";
+                text.innerText = "Ouvert";
+            } else {
+                badge.className = "px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-xs bg-red-100 text-red-800 dark:bg-red-950/50 dark:text-red-400";
+                dot.className = "h-2 w-2 rounded-full bg-red-500";
+                text.innerText = "Fermé (Dès 7h00)";
+            }
+        }
+
+        // 4. LOGIQUE GESTION DU PANIER (LocalStorage inclus)
+        function toggleCart() {
+            document.getElementById('cart-sidebar').classList.toggle('translate-x-full');
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const exist = cart.find(item => item.id === id);
+            if (exist) {
+                exist.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            saveCart();
+            // Petite animation visuelle de succès au clic
+            alert(`${product.name} ajouté au panier !`);
+        }
+
+        function changeQuantity(id, change) {
+            const item = cart.find(i => i.id === id);
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            saveCart();
+        }
+
+        function saveCart() {
+            localStorage.setItem('bakery-cart', JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const countBadge = document.getElementById('cart-count');
+            const totalSpan = document.getElementById('cart-total');
+            
+            container.innerHTML = '';
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-center text-gray-400 my-8">Votre panier est vide 🥖</p>`;
+            }
+
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                count += item.quantity;
+                container.innerHTML += `
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-2 dark:border-zinc-800">
+                        <div>
+                            <h4 class="font-bold text-sm">${item.name}</h4>
+                            <p class="text-xs text-amber-700 dark:text-amber-400">${item.price.toFixed(2)} € u.</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="changeQuantity(${item.id}, -1)" class="bg-gray-100 dark:bg-zinc-700 h-6 w-6 rounded flex items-center justify-center text-xs font-bold cursor-pointer">-</button>
+                            <span class="text-sm font-bold">${item.quantity}</span>
+                            <button onclick="changeQuantity(${item.id}, 1)" class="bg-gray-100 dark:bg-zinc-700 h-6 w-6 rounded flex items-center justify-center text-xs font-bold cursor-pointer">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            countBadge.innerText = count;
+            totalSpan.innerText = `${total.toFixed(2)} €`;
+        }
+
+        // 5. SIMULATION DE PAIEMENT & VALIDATION HORAIRE
+        function checkoutSimulation() {
+            const pickupTime = document.getElementById('pickup-time').value;
+            if (cart.length === 0) return alert("Votre panier est vide !");
+            if (!pickupTime) return alert("Veuillez sélectionner un horaire de retrait.");
+
+            const dateStr = new Date(pickupTime).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
+            
+            alert(`💳 [Simulation Paiement Reçue]\n\nMerci pour votre commande !\nMontant payé : ${document.getElementById('cart-total').innerText}\nCréneau de retrait validé pour le : ${dateStr}\n\nUn e-mail de confirmation (factice) vous a été envoyé.`);
+            
+            cart = [];
+            saveCart();
+            toggleCart();
+        }
+
+        // 6. TOGGLE MODE SOMBRE
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const icon = themeToggleBtn.querySelector('i');
+            if (document.documentElement.classList.contains('dark')) {
+                icon.className = "fa-solid fa-sun";
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.className = "fa-solid fa-moon";
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // INIT AU CHARGEMENT
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleBtn.querySelector('i').className = "fa-solid fa-sun";
+        }
+        
+        renderProducts();
+        updateCartUI();
+        updateStoreStatus();
+        setInterval(updateStoreStatus, 60000); // refresh le statut toutes les minutes
+    </script>
+</body>
+</html>

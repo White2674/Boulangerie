@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Collection | L'Atelier du Grain</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Prata&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-brand { font-family: 'Prata', serif; }
@@ -13,7 +13,7 @@
 </head>
 <body class="bg-[#0B132B] text-[#F4F5F6] antialiased selection:bg-[#E0A96D]/40 min-h-screen flex flex-col justify-between">
 
-    <nav class="bg-[#0B132B] border-b-3 border-[#E0A96D] sticky top-0 z-50">
+    <nav class="bg-[#0B132B] border-b border-white/10 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
         <div class="max-w-7xl mx-auto px-6 md:px-12 h-24 flex justify-between items-center relative">
             <a href="index.html" class="font-brand text-2xl tracking-tighter text-white uppercase font-black hover:text-[#E0A96D] transition-colors">
                 L'Atelier<span class="text-[#E0A96D]">.</span> du Grain
@@ -21,44 +21,42 @@
             <div class="hidden md:flex items-center space-x-10 text-[10px] font-extrabold tracking-[0.3em] uppercase">
                 <a href="index.html" class="text-white/60 hover:text-white transition-colors">Accueil</a>
                 <a href="propos.html" class="text-white/60 hover:text-white transition-colors">La Maison</a>
-                <a href="catalogue.html" class="text-[#E0A96D] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[3px] after:bg-[#E0A96D]">La Collection</a>
+                <a href="catalogue.html" class="text-[#E0A96D] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[2px] after:bg-[#E0A96D]">La Collection</a>
                 <a href="album.html" class="text-white/60 hover:text-white transition-colors">L'Album</a>
                 <a href="contact.html" class="text-white/60 hover:text-white transition-colors">Contact</a>
             </div>
             <div class="hidden sm:block">
-                <a href="contact.html" class="relative inline-flex items-center justify-center bg-[#E0A96D] text-[#0B132B] text-[11px] font-black uppercase tracking-[0.25em] px-8 py-4 overflow-hidden group border-2 border-[#E0A96D] hover:bg-transparent hover:text-[#E0A96D] transition-all duration-200">
-                    <span class="relative z-10">Venir au Fournil</span>
+                <a href="contact.html" class="relative inline-flex items-center justify-center bg-[#E0A96D] text-[#0B132B] text-[11px] font-black uppercase tracking-[0.25em] px-8 py-4 border border-[#E0A96D] hover:bg-transparent hover:text-[#E0A96D] transition-all duration-300">
+                    <span>Venir au Fournil</span>
                 </a>
             </div>
         </div>
     </nav>
 
-    <header class="bg-[#0B132B] text-white pt-24 pb-12 relative overflow-hidden border-b-3 border-[#E0A96D]">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(224,169,109,0.1),transparent_60%)]"></div>
-        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center space-y-6">
-            <div class="flex justify-center items-center gap-4 text-[#E0A96D] text-[11px] font-black tracking-[0.5em] uppercase">
-                <span class="w-8 h-[1px] bg-[#E0A96D]"></span> DISPONIBLE CE MATIN EN BOUTIQUE
-            </div>
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-brand tracking-tighter leading-none">
-                La Collection<span class="text-[#E0A96D]">.</span>
+    <header class="bg-[#0B132B] text-white pt-24 pb-12 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-4">
+            <span class="text-[#E0A96D] text-[10px] font-black tracking-[0.4em] uppercase block">Catalogue Éditorial</span>
+            <h1 class="text-4xl sm:text-6xl font-brand tracking-tighter text-white">
+                La Collection Permanente<span class="text-[#E0A96D]">.</span>
             </h1>
+            <div class="w-12 h-[1px] bg-[#E0A96D]/50 mx-auto mt-4"></div>
         </div>
     </header>
 
-    <section class="bg-[#0B132B] py-6 border-b-3 border-[#E0A96D] sticky top-24 z-40">
+    <section class="bg-[#0B132B] py-4 border-b border-white/10 sticky top-24 z-40 bg-opacity-95 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="flex flex-wrap justify-center gap-4 md:gap-8 text-[10px] font-black tracking-[0.25em] uppercase" id="filter-buttons">
-                <button onclick="filterCategory('tous')" class="text-[#0B132B] bg-[#E0A96D] border-2 border-[#E0A96D] px-6 py-3 cursor-pointer transition-all">Tous</button>
-                <button onclick="filterCategory('pains')" class="text-white/60 hover:text-white border-2 border-white/10 px-6 py-3 cursor-pointer transition-all">Pains</button>
-                <button onclick="filterCategory('viennoiseries')" class="text-white/60 hover:text-white border-2 border-white/10 px-6 py-3 cursor-pointer transition-all">Viennoiseries</button>
-                <button onclick="filterCategory('patisseries')" class="text-white/60 hover:text-white border-2 border-white/10 px-6 py-3 cursor-pointer transition-all">Pâtisseries</button>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-12 text-[10px] font-bold tracking-[0.3em] uppercase" id="filter-buttons">
+                <button onclick="filterCategory('tous')" class="text-[#E0A96D] border-b-2 border-[#E0A96D] pb-2 cursor-pointer transition-all">Tous</button>
+                <button onclick="filterCategory('pains')" class="text-white/40 hover:text-white pb-2 cursor-pointer transition-all border-b-2 border-transparent">Pains</button>
+                <button onclick="filterCategory('viennoiseries')" class="text-white/40 hover:text-white pb-2 cursor-pointer transition-all border-b-2 border-transparent">Viennoiseries</button>
+                <button onclick="filterCategory('patisseries')" class="text-white/40 hover:text-white pb-2 cursor-pointer transition-all border-b-2 border-transparent">Pâtisseries</button>
             </div>
         </div>
     </section>
 
-    <main class="py-24 bg-[#0B132B] w-full flex-grow">
+    <main class="py-20 bg-[#0B132B] w-full flex-grow">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid"></div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16" id="products-grid"></div>
         </div>
     </main>
 
@@ -75,14 +73,14 @@
 
     <script>
         const products = [
-            { id: 1, name: "La Baguette Tradition", category: "pains", tag: "Signature • Fermentation 24h", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600" },
+            { id: 1, name: "La Baguette Tradition", category: "pains", tag: "Signature • Levain Liquide", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600" },
             { id: 2, name: "Le Pain de Meule Bio", category: "pains", tag: "Blés Anciens T80", img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600" },
             { id: 3, name: "Le Seigle Noir au Miel", category: "pains", tag: "Pur Levain Sauvage", img: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=600" },
             { id: 4, name: "Le Croissant Feuilleté", category: "viennoiseries", tag: "Beurre AOP Charentes", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600" },
             { id: 5, name: "Pain au Chocolat Obscur", category: "viennoiseries", tag: "Bâtons Valrhona 70%", img: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=600" },
-            { id: 6, name: "Brioche Feuilletée Sucre", category: "viennoiseries", tag: "Pétrie à la Main", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600" },
+            { id: 6, name: "Brioche Feuilletée Sucre", category: "viennoiseries", tag: "Pétrie à la Hand", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600" },
             { id: 7, name: "L'Éclair Grand Cru", category: "patisseries", tag: "Chocolat Noir 72%", img: "https://images.unsplash.com/photo-1612203985029-e6786b224304?q=80&w=600" },
-            { id: 8, name: "Le Flan à la Vanille Bourbon", category: "patisseries", tag: "Infusion 24h", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600" }
+            { id: 8, name: "Le Flan Vanille Bourbon", category: "patisseries", tag: "Infusion Réserve 24h", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600" }
         ];
 
         function renderProducts(filter = 'tous') {
@@ -92,13 +90,14 @@
             
             filtered.forEach(p => {
                 grid.innerHTML += `
-                    <div class="space-y-4 group cursor-pointer border-3 border-[#E0A96D] bg-[#0F1A3A] p-5 transition-all hover:border-white">
-                        <div class="h-64 bg-slate-900 border-2 border-[#E0A96D]/30 overflow-hidden relative">
-                            <img src="${p.img}" class="w-full h-full object-cover contrast-115 brightness-105 group-hover:scale-105 transition-transform duration-500 ease-out">
+                    <div class="space-y-4 group cursor-pointer">
+                        <div class="h-80 bg-[#0F1A3A] overflow-hidden relative border border-white/5">
+                            <img src="${p.img}" class="w-full h-full object-cover contrast-105 brightness-100 transition-transform duration-700 ease-out group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         </div>
-                        <div class="space-y-2">
-                            <span class="text-[9px] text-[#E0A96D] uppercase tracking-widest block font-black">${p.tag}</span>
-                            <h3 class="font-brand text-xl text-white tracking-tight group-hover:text-[#E0A96D] transition-colors">${p.name}</h3>
+                        <div class="space-y-1 pt-1">
+                            <span class="text-[9px] text-[#E0A96D] uppercase tracking-[0.2em] font-semibold block">${p.tag}</span>
+                            <h3 class="font-brand text-lg text-white tracking-tight group-hover:text-[#E0A96D] transition-colors duration-300">${p.name}</h3>
                         </div>
                     </div>`;
             });
@@ -107,16 +106,16 @@
         function filterCategory(cat) {
             renderProducts(cat);
             
-            // Remettre à zéro tous les boutons
+            // Remettre à zéro l'état visuel de tous les boutons de filtrage
             document.querySelectorAll('#filter-buttons button').forEach(btn => {
-                btn.className = "text-white/60 hover:text-white border-2 border-white/10 px-6 py-3 cursor-pointer transition-all";
+                btn.className = "text-white/40 hover:text-white pb-2 cursor-pointer transition-all border-b-2 border-transparent";
             });
             
-            // Activer le bouton sélectionné
-            event.currentTarget.className = "text-[#0B132B] bg-[#E0A96D] border-2 border-[#E0A96D] px-6 py-3 cursor-pointer transition-all";
+            // Appliquer le style de sélection active sur l'élément cliqué
+            event.currentTarget.className = "text-[#E0A96D] border-b-2 border-[#E0A96D] pb-2 cursor-pointer transition-all";
         }
 
-        // Initier la grille au chargement de page
+        // Chargement initial du catalogue
         renderProducts();
     </script>
 </body>

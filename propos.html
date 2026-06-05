@@ -1,42 +1,228 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Maison | L'Atelier du Grain</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Montserrat', sans-serif; } .font-serif { font-family: 'Cormorant Garamond', serif; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Prata&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-brand { font-family: 'Prata', serif; }
+        
+        /* Marquee Infini Ultra Rapide et Impactant */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ruban { display: flex; width: 200%; animation: marquee 14s linear infinite; }
+    </style>
 </head>
-<body class="bg-[#faf9f6] text-[#1c1b1a] antialiased flex flex-col min-h-screen justify-between">
+<body class="bg-[#0B132B] text-[#F4F5F6] antialiased selection:bg-[#E0A96D]/40 min-h-screen flex flex-col">
 
-    <nav class="bg-[#1c1b1a] text-white px-8 py-6 flex justify-between items-center tracking-[0.2em] uppercase text-[11px]">
-        <a href="index.html" class="text-xl font-serif tracking-[0.25em] font-light">L'Atelier du Grain</a>
-        <div class="hidden md:flex space-x-12 font-light">
-            <a href="index.html" class="text-stone-400 hover:text-white transition">Accueil</a>
-            <a href="propos.html" class="text-[#c5a880]">À Propos</a>
-            <a href="catalogue.html" class="text-stone-400 hover:text-white transition">La Collection</a>
-            <a href="album.html" class="text-stone-400 hover:text-white transition">L'Album</a>
-            <a href="contact.html" class="text-stone-400 hover:text-white transition">Contact</a>
+    <nav class="bg-[#0B132B] border-b-3 border-[#E0A96D] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-24 flex justify-between items-center relative">
+            <a href="index.html" class="font-brand text-2xl tracking-tighter text-white uppercase font-black hover:text-[#E0A96D] transition-colors">
+                L'Atelier<span class="text-[#E0A96D]">.</span> du Grain
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-[10px] font-extrabold tracking-[0.3em] uppercase">
+                <a href="index.html" class="text-white/60 hover:text-white transition-colors">Accueil</a>
+                <a href="propos.html" class="text-[#E0A96D] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[3px] after:bg-[#E0A96D]">La Maison</a>
+                <a href="catalogue.html" class="text-white/60 hover:text-white transition-colors">La Collection</a>
+                <a href="album.html" class="text-white/60 hover:text-white transition-colors">L'Album</a>
+                <a href="contact.html" class="text-white/60 hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="hidden sm:block">
+                <a href="contact.html" class="relative inline-flex items-center justify-center bg-[#E0A96D] text-[#0B132B] text-[11px] font-black uppercase tracking-[0.25em] px-8 py-4 overflow-hidden group border-2 border-[#E0A96D] hover:bg-transparent hover:text-[#E0A96D] transition-all duration-200">
+                    <span class="relative z-10">Venir au Fournil</span>
+                </a>
+            </div>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-8 py-20 grid md:grid-cols-2 gap-16 items-center">
-        <div class="space-y-6">
-            <span class="text-[#c5a880] uppercase tracking-[0.2em] text-xs block">Notre Histoire</span>
-            <h2 class="text-4xl font-serif font-light tracking-wide">Une transmission, un savoir-faire</h2>
-            <div class="w-12 h-[1px] bg-[#c5a880] my-4"></div>
-            <p class="text-sm text-stone-600 leading-relaxed font-light">
-                Fondée par le Maître Artisan Jean-Pierre Grain, notre maison s'attache à redonner ses lettres de noblesse à la boulangerie de tradition. Ici, le geste est précis, le silence accompagne la pousse de la pâte, et le feu du four vient parfaire le travail.
+    <header class="bg-[#0B132B] text-white min-h-[75vh] flex items-center relative overflow-hidden border-b-3 border-[#E0A96D]">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(224,169,109,0.1),transparent_50%)]"></div>
+        
+        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-12 items-center gap-12 px-6 md:px-12 py-20 relative z-10">
+            <div class="md:col-span-4 relative h-[480px] w-full hidden md:block border-3 border-[#E0A96D] overflow-hidden bg-slate-900 shadow-2xl transform -rotate-2">
+                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200" class="w-full h-full object-cover contrast-115 brightness-95" alt="Farine et mains de l'artisan">
+            </div>
+            
+            <div class="space-y-8 max-w-2xl md:col-span-8 md:pl-6">
+                <div class="flex items-center gap-4 text-[#E0A96D] text-[12px] font-black tracking-[0.4em] uppercase">
+                    <span class="w-12 h-[2px] bg-[#E0A96D]"></span> NOTRE MANIFESTE COUTURE
+                </div>
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-brand leading-[0.95] tracking-tighter text-white">
+                    Revenir au brut. <br>Bousculer le <span class="italic font-normal text-[#E0A96D]">sacré</span>.
+                </h1>
+                <p class="text-slate-300 text-sm md:text-base font-normal leading-relaxed">
+                    L'Atelier du Grain n'est pas une simple boulangerie, c'est un laboratoire de résistance face à l'immédiateté. Ici, nous refusons les levures chimiques, les farines standardisées et les cadences industrielles. Nous façonnons à la main un produit vivant, capricieux, indomptable.
+                </p>
+                <div class="border-t border-white/10 pt-6 flex gap-8">
+                    <div>
+                        <span class="font-brand text-3xl text-[#E0A96D] block">0%</span>
+                        <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Additif chimique</span>
+                    </div>
+                    <div class="border-l border-white/10 pl-8">
+                        <span class="font-brand text-3xl text-white block">100%</span>
+                        <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Levain Naturel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-[#E0A96D] text-[#0B132B] uppercase text-[11px] font-black tracking-[0.4em] py-5 overflow-hidden border-b-3 border-[#0B132B] relative z-20">
+        <div class="animate-ruban whitespace-nowrap">
+            <span>• Farines de meule bio • Eau filtrée • Sel de Guérande récolté à la main • Fermentation 48h minimale • Respect absolu du vivant • Cuisson noire sur sole • Farines de meule bio • Eau filtrée • Sel de Guérande récolté à la main • Fermentation 48h minimale • Respect absolu du vivant • Cuisson noire sur sole •</span>
+        </div>
+    </div>
+
+    <section class="py-36 bg-[#F4F5F6] text-[#0B132B] border-b-3 border-[#0B132B]">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <div class="grid md:grid-cols-12 gap-12 mb-24 items-end">
+                <div class="md:col-span-7 space-y-4">
+                    <span class="text-slate-400 text-[11px] uppercase tracking-[0.4em] font-black block">24 heures au fournil</span>
+                    <h2 class="text-4xl sm:text-6xl font-brand text-[#0B132B] tracking-tighter leading-[0.95]">Pendant que Paris <br><span class="font-serif italic text-slate-500">s'endort...</span></h2>
+                </div>
+                <div class="md:col-span-5 text-slate-600 text-sm leading-relaxed">
+                    Notre histoire s’écrit chaque nuit, dans le silence métallique du laboratoire. Un ballet millimétré guidé par la température de la pièce, l'humidité de l'air et le réveil de notre levain chef.
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-0 border-4 border-[#0B132B] bg-[#0B132B]">
+                
+                <div class="p-10 bg-[#F4F5F6] border-b-4 md:border-b-0 md:border-r-4 border-[#0B132B] space-y-8 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="font-brand text-4xl text-[#E0A96D] font-black tracking-tight">22h00</div>
+                        <h3 class="text-xs font-black uppercase tracking-[0.25em] border-b-2 border-[#0B132B] pb-2">Le Réveil du Chef</h3>
+                        <p class="text-slate-700 text-xs md:text-sm leading-relaxed font-light">
+                            C'est l'heure où notre levain naturel, nourri patiemment quelques heures plus tôt, atteint sa puissance aromatique maximale. Le pétrissage commence, lent, sans échauffer la matière.
+                        </p>
+                    </div>
+                    <div class="h-40 w-full bg-slate-200 border-2 border-[#0B132B] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581333100576-b73bbe79c955?q=80&w=600" class="w-full h-full object-cover contrast-110" alt="Pétrissage du pain">
+                    </div>
+                </div>
+
+                <div class="p-10 bg-[#F4F5F6] border-b-4 md:border-b-0 md:border-r-4 border-[#0B132B] space-y-8 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="font-brand text-4xl text-[#0B132B] font-black tracking-tight">02h30</div>
+                        <h3 class="text-xs font-black uppercase tracking-[0.25em] border-b-2 border-[#0B132B] pb-2">Le Tour de Main</h3>
+                        <p class="text-slate-700 text-xs md:text-sm leading-relaxed font-light">
+                            Chaque miche est pesée, divisée et façonnée exclusivement à la main. Pas de machine destructrice d'alvéoles ici. Le geste est vif, précis, presque chirurgical pour donner la tension idéale au pâton.
+                        </p>
+                    </div>
+                    <div class="h-40 w-full bg-slate-200 border-2 border-[#0B132B] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=600" class="w-full h-full object-cover contrast-110" alt="Façonnage de la pâte">
+                    </div>
+                </div>
+
+                <div class="p-10 bg-[#0B132B] text-white space-y-8 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="font-brand text-4xl text-[#E0A96D] font-black tracking-tight">05h45</div>
+                        <h3 class="text-xs font-black text-white uppercase tracking-[0.25em] border-b-2 border-[#E0A96D] pb-2">L'Épreuve du Feu</h3>
+                        <p class="text-slate-300 text-xs md:text-sm leading-relaxed font-light">
+                            Les lames entament la croûte (la grigne) avant l’enfournement sur sole brûlante. Le choc thermique est immédiat, la miche gonfle, caramélise et prend cette couleur signature, sombre et sauvage.
+                        </p>
+                    </div>
+                    <div class="h-40 w-full bg-slate-900 border-2 border-[#E0A96D] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=600" class="w-full h-full object-cover contrast-125 brightness-110" alt="Cuisson au four">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-36 max-w-7xl mx-auto px-6 md:px-12 bg-[#0B132B] border-b-3 border-[#E0A96D]">
+        <div class="text-center max-w-2xl mx-auto mb-28 space-y-4">
+            <span class="text-[#E0A96D] text-xs font-black uppercase tracking-[0.4em] block">Les Artisans du Brut</span>
+            <h2 class="text-4xl sm:text-5xl font-brand text-white tracking-tight leading-none">Des mains obsessionnelles</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-0 border-3 border-[#E0A96D]">
+            <div class="p-12 bg-[#0B132B] border-b-3 md:border-b-0 md:border-r-3 border-[#E0A96D] grid sm:grid-cols-12 gap-8 items-center">
+                <div class="sm:col-span-5 h-56 bg-slate-800 border-2 border-[#E0A96D] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600" class="w-full h-full object-cover contrast-110 grayscale" alt="Boulanger en chef">
+                </div>
+                <div class="sm:col-span-7 space-y-4">
+                    <span class="text-[10px] bg-[#E0A96D] text-[#0B132B] font-black uppercase tracking-widest px-3 py-1">Fondateur & Chef</span>
+                    <h3 class="font-brand text-2xl text-white">Alexandre V.</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed font-light">
+                        Ancien ingénieur reconverti par obsession pour le pain ancien. Il passe 3 ans à sourcer des blés oubliés à travers l'hexagone avant de poser son premier fournil.
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-12 bg-[#0B132B] grid sm:grid-cols-12 gap-8 items-center">
+                <div class="sm:col-span-5 h-56 bg-slate-800 border-2 border-[#E0A96D] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600" class="w-full h-full object-cover contrast-110 grayscale" alt="Chef Viennoisière">
+                </div>
+                <div class="sm:col-span-7 space-y-4">
+                    <span class="text-[10px] bg-white text-[#0B132B] font-black uppercase tracking-widest px-3 py-1">Chef Tourière</span>
+                    <h3 class="font-brand text-2xl text-white">Morgane Le Gall</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed font-light">
+                        Le génie du feuilletage. Pour elle, le beurre de baratte AOP est une science exacte. Elle calibre ses textures au millimètre près pour un croustillant atomique.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white text-[#0B132B] py-24 border-b-4 border-[#0B132B]">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-12 items-center">
+            
+            <div class="md:col-span-5 space-y-8 md:border-l-4 md:border-[#0B132B] md:pl-8">
+                <div class="space-y-2">
+                    <span class="text-[#E0A96D] text-[10px] font-black uppercase tracking-[0.4em] block">Passez nous voir</span>
+                    <h2 class="text-3xl font-brand tracking-tighter text-[#0B132B] leading-none">L'Atelier du Grain</h2>
+                </div>
+                
+                <div class="space-y-4 text-xs font-bold tracking-widest uppercase max-w-sm">
+                    <div class="flex justify-between border-b-2 border-[#0B132B]/10 pb-2">
+                        <span class="text-slate-400">Lundi - Vendredi</span>
+                        <span class="text-[#0B132B] font-brand font-black">07:00 — 19:00</span>
+                    </div>
+                    <div class="flex justify-between border-b-2 border-[#0B132B]/10 pb-2">
+                        <span class="text-slate-400">Samedi</span>
+                        <span class="text-[#0B132B] font-brand font-black">07:30 — 19:30</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-1">
+                        <span class="text-slate-400">Dimanche</span>
+                        <span class="border-2 border-red-500 text-red-500 text-[9px] font-black uppercase tracking-[0.2em] px-2 py-1">Fermé</span>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t-2 border-[#0B132B]/10 text-[10px] text-slate-600 font-normal leading-relaxed max-w-sm">
+                    📢 <strong class="text-[#0B132B] font-black uppercase tracking-wider text-[9px] mr-1">Conseil d'habitué :</strong> Nos fournées spéciales sortent tout juste du four à 11h00 et 16h30. C'est le meilleur moment pour venir chercher votre miche encore chaude !
+                </div>
+            </div>
+
+            <div class="md:col-span-7 space-y-4">
+                <div class="space-y-1">
+                    <span class="text-slate-400 text-[9px] font-black uppercase tracking-[0.3em] block">La Boutique de l'Atelier</span>
+                    <p class="text-xs font-bold tracking-wide text-[#0B132B]">📍 42 Rue de la Levure, 75011 Paris</p>
+                </div>
+                <div class="w-full h-64 border-4 border-[#0B132B] overflow-hidden grayscale contrast-125 hover:grayscale-0 transition-all duration-500">
+                    <iframe class="w-full h-full" src="https://maps.google.com/maps?q=Paris%2075011&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-[#0B132B] text-slate-500 text-center py-16 mt-auto relative z-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 space-y-3">
+            <p class="tracking-[0.3em] uppercase text-[10px] font-black text-white">Maison L'Atelier du Grain — © 2026</p>
+            <div class="w-12 h-[1px] bg-[#E0A96D]/60 mx-auto"></div>
+            <p class="text-slate-400 text-[10px] max-w-xl mx-auto leading-relaxed tracking-wide font-normal">
+                Manufacture artisanale enregistrée au Répertoire des Métiers de Paris.<br>
+                <span class="text-slate-500 text-[9px] opacity-80 block mt-1">L'excellence, la transparence et le respect absolu du vivant au service du goût originel.</span>
             </p>
         </div>
-        <div>
-            <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=600" class="w-full h-96 object-cover rounded shadow-lg grayscale">
-        </div>
-    </main>
-
-    <footer class="bg-[#1c1b1a] text-stone-500 text-center py-8 text-[9px] tracking-[0.25em] uppercase">
-        <p>Maison L'Atelier du Grain — © 2026</p>
     </footer>
+
 </body>
 </html>

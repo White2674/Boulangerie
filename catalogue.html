@@ -21,13 +21,12 @@
         </div>
     </nav>
 
-    <main class="py-16 px-8 max-w-6xl mx-auto flex-1">
+    <main class="py-16 px-8 max-w-6xl mx-auto flex-1 w-full">
         <div class="text-center mb-12">
             <span class="text-[#c5a880] uppercase tracking-[0.2em] text-xs block mb-2">Les Créations</span>
             <h2 class="text-3xl font-serif font-light tracking-wide">La Collection Permanente</h2>
         </div>
 
-        <!-- Filtres JS -->
         <div class="flex flex-wrap justify-center gap-8 mb-12 text-xs uppercase tracking-[0.2em] font-light border-b border-stone-200 pb-4" id="filter-buttons">
             <button onclick="filterCategory('tous')" class="text-[#c5a880] border-b border-[#c5a880] pb-1 cursor-pointer">Tous</button>
             <button onclick="filterCategory('pains')" class="text-stone-400 hover:text-[#1c1b1a] cursor-pointer">Pains</button>
@@ -38,12 +37,20 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid"></div>
     </main>
 
+    <footer class="bg-[#1c1b1a] text-stone-500 text-center py-8 text-[9px] tracking-[0.25em] uppercase">
+        <p>Maison L'Atelier du Grain — © 2026</p>
+    </footer>
+
     <script>
         const products = [
-            { id: 1, name: "La Baguette Tradition", category: "pains", tag: "Signature", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=400" },
-            { id: 2, name: "Le Pain de Meule Bio", category: "pains", tag: "Blés Anciens", img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=400" },
-            { id: 3, name: "Le Croissant Feuilleté", category: "viennoiseries", tag: "AOP Charentes", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=400" },
-            { id: 4, name: "L'Éclair Grand Cru", category: "patisseries", tag: "Chocolat 72%", img: "https://images.unsplash.com/photo-1612203985029-e6786b224304?q=80&w=400" }
+            { id: 1, name: "La Baguette Tradition", category: "pains", tag: "Signature • Fermentation 24h", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600" },
+            { id: 2, name: "Le Pain de Meule Bio", category: "pains", tag: "Blés Anciens T80", img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600" },
+            { id: 3, name: "Le Seigle Noir au Miel", category: "pains", tag: "Pur Levain Sauvage", img: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=600" },
+            { id: 4, name: "Le Croissant Feuilleté", category: "viennoiseries", tag: "Beurre AOP Charentes", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600" },
+            { id: 5, name: "Pain au Chocolat Obscur", category: "viennoiseries", tag: "Bâtons Valrhona 70%", img: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=600" },
+            { id: 6, name: "Brioche Feuilletée Sucre", category: "viennoiseries", tag: "Pétrie à la Main", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600" },
+            { id: 7, name: "L'Éclair Grand Cru", category: "patisseries", tag: "Chocolat Noir 72%", img: "https://images.unsplash.com/photo-1612203985029-e6786b224304?q=80&w=600" },
+            { id: 8, name: "Le Flan à la Vanille Bourbon", category: "patisseries", tag: "Infusion 24h", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600" }
         ];
 
         function renderProducts(filter = 'tous') {
@@ -52,23 +59,24 @@
             const filtered = filter === 'tous' ? products : products.filter(p => p.category === filter);
             filtered.forEach(p => {
                 grid.innerHTML += `
-                    <div class="space-y-3">
-                        <img src="${p.img}" class="w-full h-64 object-cover rounded-[1px] grayscale opacity-90">
-                        <span class="text-[9px] text-[#c5a880] uppercase tracking-widest block">${p.tag}</span>
-                        <h3 class="font-serif text-md text-stone-900 font-light">${p.name}</h3>
+                    <div class="space-y-3 group cursor-pointer">
+                        <div class="overflow-hidden bg-stone-100">
+                            <img src="${p.img}" class="w-full h-64 object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out">
+                        </div>
+                        <span class="text-[9px] text-[#c5a880] uppercase tracking-widest block font-light">${p.tag}</span>
+                        <h3 class="font-serif text-md text-stone-900 font-light tracking-wide">${p.name}</h3>
                     </div>`;
             });
         }
+
         function filterCategory(cat) {
             renderProducts(cat);
-            document.querySelectorAll('#filter-buttons button').forEach(btn => btn.className = "text-stone-400 hover:text-[#1c1b1a] cursor-pointer");
-            event.currentTarget.className = "text-[#c5a880] border-b border-[#c5a880] pb-1 cursor-pointer";
+            document.querySelectorAll('#filter-buttons button').forEach(btn => btn.className = "text-stone-400 hover:text-[#1c1b1a] cursor-pointer transition");
+            event.currentTarget.className = "text-[#c5a880] border-b border-[#c5a880] pb-1 cursor-pointer transition";
         }
+
+        // Premier allumage de la page
         renderProducts();
     </script>
-
-    <footer class="bg-[#1c1b1a] text-stone-500 text-center py-8 text-[9px] tracking-[0.25em] uppercase">
-        <p>Maison L'Atelier du Grain — © 2026</p>
-    </footer>
 </body>
 </html>

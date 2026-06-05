@@ -1,44 +1,76 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Collection | L'Atelier du Grain</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Montserrat', sans-serif; } .font-serif { font-family: 'Cormorant Garamond', serif; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Prata&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-brand { font-family: 'Prata', serif; }
+    </style>
 </head>
-<body class="bg-[#faf9f6] text-[#1c1b1a] antialiased flex flex-col min-h-screen justify-between">
+<body class="bg-[#0B132B] text-[#F4F5F6] antialiased selection:bg-[#E0A96D]/40 min-h-screen flex flex-col justify-between">
 
-    <nav class="bg-[#1c1b1a] text-white px-8 py-6 flex justify-between items-center tracking-[0.2em] uppercase text-[11px]">
-        <a href="index.html" class="text-xl font-serif tracking-[0.25em] font-light">L'Atelier du Grain</a>
-        <div class="hidden md:flex space-x-12 font-light">
-            <a href="index.html" class="text-stone-400 hover:text-white transition">Accueil</a>
-            <a href="propos.html" class="text-stone-400 hover:text-white transition">À Propos</a>
-            <a href="catalogue.html" class="text-[#c5a880]">La Collection</a>
-            <a href="album.html" class="text-stone-400 hover:text-white transition">L'Album</a>
-            <a href="contact.html" class="text-stone-400 hover:text-white transition">Contact</a>
+    <nav class="bg-[#0B132B] border-b-3 border-[#E0A96D] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-24 flex justify-between items-center relative">
+            <a href="index.html" class="font-brand text-2xl tracking-tighter text-white uppercase font-black hover:text-[#E0A96D] transition-colors">
+                L'Atelier<span class="text-[#E0A96D]">.</span> du Grain
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-[10px] font-extrabold tracking-[0.3em] uppercase">
+                <a href="index.html" class="text-white/60 hover:text-white transition-colors">Accueil</a>
+                <a href="propos.html" class="text-white/60 hover:text-white transition-colors">La Maison</a>
+                <a href="catalogue.html" class="text-[#E0A96D] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[3px] after:bg-[#E0A96D]">La Collection</a>
+                <a href="album.html" class="text-white/60 hover:text-white transition-colors">L'Album</a>
+                <a href="contact.html" class="text-white/60 hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="hidden sm:block">
+                <a href="contact.html" class="relative inline-flex items-center justify-center bg-[#E0A96D] text-[#0B132B] text-[11px] font-black uppercase tracking-[0.25em] px-8 py-4 overflow-hidden group border-2 border-[#E0A96D] hover:bg-transparent hover:text-[#E0A96D] transition-all duration-200">
+                    <span class="relative z-10">Venir au Fournil</span>
+                </a>
+            </div>
         </div>
     </nav>
 
-    <main class="py-16 px-8 max-w-6xl mx-auto flex-1 w-full">
-        <div class="text-center mb-12">
-            <span class="text-[#c5a880] uppercase tracking-[0.2em] text-xs block mb-2">Les Créations</span>
-            <h2 class="text-3xl font-serif font-light tracking-wide">La Collection Permanente</h2>
+    <header class="bg-[#0B132B] text-white pt-24 pb-12 relative overflow-hidden border-b-3 border-[#E0A96D]">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(224,169,109,0.1),transparent_60%)]"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center space-y-6">
+            <div class="flex justify-center items-center gap-4 text-[#E0A96D] text-[11px] font-black tracking-[0.5em] uppercase">
+                <span class="w-8 h-[1px] bg-[#E0A96D]"></span> DISPONIBLE CE MATIN EN BOUTIQUE
+            </div>
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-brand tracking-tighter leading-none">
+                La Collection<span class="text-[#E0A96D]">.</span>
+            </h1>
         </div>
+    </header>
 
-        <div class="flex flex-wrap justify-center gap-8 mb-12 text-xs uppercase tracking-[0.2em] font-light border-b border-stone-200 pb-4" id="filter-buttons">
-            <button onclick="filterCategory('tous')" class="text-[#c5a880] border-b border-[#c5a880] pb-1 cursor-pointer">Tous</button>
-            <button onclick="filterCategory('pains')" class="text-stone-400 hover:text-[#1c1b1a] cursor-pointer">Pains</button>
-            <button onclick="filterCategory('viennoiseries')" class="text-stone-400 hover:text-[#1c1b1a] cursor-pointer">Viennoiseries</button>
-            <button onclick="filterCategory('patisseries')" class="text-stone-400 hover:text-[#1c1b1a] cursor-pointer">Pâtisseries</button>
+    <section class="bg-[#0B132B] py-6 border-b-3 border-[#E0A96D] sticky top-24 z-40">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 text-[10px] font-black tracking-[0.25em] uppercase" id="filter-buttons">
+                <button onclick="filterCategory('tous')" class="text-[#0B132B] bg-[#E0A96D] border-2 border-[#E0A96D] px-6 py-3 cursor-pointer transition-all">Tous</button>
+                <button onclick="filterCategory('pains')" class="text-white/60 hover:text-white border-2 border-white/10 px-6 py-3 cursor-pointer transition-all">Pains</button>
+                <button onclick="filterCategory('viennoiseries')" class="text-white/60 hover:text-white border-2 border-white/10 px-6 py-3 cursor-pointer transition-all">Viennoiseries</button>
+                <button onclick="filterCategory('patisseries')" class="text-white/60 hover:text-white border-2 border-white/10 px-6 py-3 cursor-pointer transition-all">Pâtisseries</button>
+            </div>
         </div>
+    </section>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid"></div>
+    <main class="py-24 bg-[#0B132B] w-full flex-grow">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid"></div>
+        </div>
     </main>
 
-    <footer class="bg-[#1c1b1a] text-stone-500 text-center py-8 text-[9px] tracking-[0.25em] uppercase">
-        <p>Maison L'Atelier du Grain — © 2026</p>
+    <footer class="bg-[#0B132B] text-slate-500 text-center py-16 relative z-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 space-y-3">
+            <p class="tracking-[0.3em] uppercase text-[10px] font-black text-white">Maison L'Atelier du Grain — © 2026</p>
+            <div class="w-12 h-[1px] bg-[#E0A96D]/60 mx-auto"></div>
+            <p class="text-slate-400 text-[10px] max-w-xl mx-auto leading-relaxed tracking-wide font-normal">
+                Manufacture artisanale enregistrée au Répertoire des Métiers de Paris.<br>
+                <span class="text-slate-500 text-[9px] opacity-80 block mt-1">L'excellence, la transparence et le respect absolu du vivant au service du goût originel.</span>
+            </p>
+        </div>
     </footer>
 
     <script>
@@ -57,25 +89,34 @@
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
             const filtered = filter === 'tous' ? products : products.filter(p => p.category === filter);
+            
             filtered.forEach(p => {
                 grid.innerHTML += `
-                    <div class="space-y-3 group cursor-pointer">
-                        <div class="overflow-hidden bg-stone-100">
-                            <img src="${p.img}" class="w-full h-64 object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out">
+                    <div class="space-y-4 group cursor-pointer border-3 border-[#E0A96D] bg-[#0F1A3A] p-5 transition-all hover:border-white">
+                        <div class="h-64 bg-slate-900 border-2 border-[#E0A96D]/30 overflow-hidden relative">
+                            <img src="${p.img}" class="w-full h-full object-cover contrast-115 brightness-105 group-hover:scale-105 transition-transform duration-500 ease-out">
                         </div>
-                        <span class="text-[9px] text-[#c5a880] uppercase tracking-widest block font-light">${p.tag}</span>
-                        <h3 class="font-serif text-md text-stone-900 font-light tracking-wide">${p.name}</h3>
+                        <div class="space-y-2">
+                            <span class="text-[9px] text-[#E0A96D] uppercase tracking-widest block font-black">${p.tag}</span>
+                            <h3 class="font-brand text-xl text-white tracking-tight group-hover:text-[#E0A96D] transition-colors">${p.name}</h3>
+                        </div>
                     </div>`;
             });
         }
 
         function filterCategory(cat) {
             renderProducts(cat);
-            document.querySelectorAll('#filter-buttons button').forEach(btn => btn.className = "text-stone-400 hover:text-[#1c1b1a] cursor-pointer transition");
-            event.currentTarget.className = "text-[#c5a880] border-b border-[#c5a880] pb-1 cursor-pointer transition";
+            
+            // Remettre à zéro tous les boutons
+            document.querySelectorAll('#filter-buttons button').forEach(btn => {
+                btn.className = "text-white/60 hover:text-white border-2 border-white/10 px-6 py-3 cursor-pointer transition-all";
+            });
+            
+            // Activer le bouton sélectionné
+            event.currentTarget.className = "text-[#0B132B] bg-[#E0A96D] border-2 border-[#E0A96D] px-6 py-3 cursor-pointer transition-all";
         }
 
-        // Premier allumage de la page
+        // Initier la grille au chargement de page
         renderProducts();
     </script>
 </body>

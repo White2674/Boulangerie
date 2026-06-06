@@ -68,16 +68,9 @@
                             <span class="text-[10px] font-black tracking-widest uppercase text-slate-400">Le Fournil Direct</span>
                             <span class="text-xs font-bold text-white">+33 (0)1 42 74 89 00</span>
                         </div>
-                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div class="flex items-center justify-between">
                             <span class="text-[10px] font-black tracking-widest uppercase text-slate-400">Courrier Électronique</span>
                             <span class="text-xs font-bold text-[#E0A96D] underline decoration-2">contact@atelierdugrain.com</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-[10px] font-black tracking-widest uppercase text-slate-400">Statut des Fours</span>
-                            <div class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                <span class="text-[10px] font-black uppercase tracking-wider text-emerald-400">En Cuisson (16h30)</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,30 +80,26 @@
                         
                         <div class="grid md:grid-cols-2 gap-8">
                             <div class="space-y-2">
-                                <label class="text-[10px] font-black tracking-[0.2em] uppercase text-slate-400 block">Votre Identité</label>
-                                <input type="text" required placeholder="Jean Dupont" 
+                                <label class="text-[10px] font-black tracking-[0.2em] uppercase text-slate-400 block">Prénom</label>
+                                <input type="text" required placeholder="Jean" 
                                     class="w-full bg-transparent border-b-2 border-white/20 pb-3 pt-1 text-white text-sm brutal-input font-medium placeholder-white/20">
                             </div>
                             <div class="space-y-2">
-                                <label class="text-[10px] font-black tracking-[0.2em] uppercase text-slate-400 block">Adresse de Contact</label>
-                                <input type="email" required placeholder="jean@exemple.com" 
+                                <label class="text-[10px] font-black tracking-[0.2em] uppercase text-slate-400 block">Nom</label>
+                                <input type="text" required placeholder="Dupont" 
                                     class="w-full bg-transparent border-b-2 border-white/20 pb-3 pt-1 text-white text-sm brutal-input font-medium placeholder-white/20">
                             </div>
                         </div>
 
                         <div class="space-y-2">
-                            <label class="text-[10px] font-black tracking-[0.2em] uppercase text-slate-400 block">Nature de la Requête</label>
-                            <select class="w-full bg-[#0B132B] border-b-2 border-white/20 pb-3 pt-1 text-white text-sm brutal-input font-medium cursor-pointer">
-                                <option class="bg-[#0F1A3A]" value="table">Réservation de pièces / Grandes Tables</option>
-                                <option class="bg-[#0F1A3A]" value="presse">Demande Presse & Médias</option>
-                                <option class="bg-[#0F1A3A]" value="grain">Question sur nos blés anciens</option>
-                                <option class="bg-[#0F1A3A]" value="autre">Autre projet hors-norme</option>
-                            </select>
+                            <label class="text-[10px] font-black tracking-[0.2em] uppercase text-slate-400 block">Adresse de Contact</label>
+                            <input type="email" required placeholder="jean@exemple.com" 
+                                class="w-full bg-transparent border-b-2 border-white/20 pb-3 pt-1 text-white text-sm brutal-input font-medium placeholder-white/20">
                         </div>
 
                         <div class="space-y-2">
                             <label class="text-[10px] font-black tracking-[0.2em] uppercase text-slate-400 block">Votre Message</label>
-                            <textarea required rows="5" placeholder="Décrivez votre projet ou votre question ici..." 
+                            <textarea required rows="6" placeholder="Décrivez votre projet ou votre question ici..." 
                                 class="w-full bg-transparent border-b-2 border-white/20 pb-3 pt-1 text-white text-sm brutal-input font-medium resize-none placeholder-white/20"></textarea>
                         </div>
 

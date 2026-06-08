@@ -1,50 +1,137 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Album | L'Atelier du Grain</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Montserrat', sans-serif; } .font-serif { font-family: 'Cormorant Garamond', serif; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Prata&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-brand { font-family: 'Prata', serif; }
+        
+        /* Animation fluide pour les images de l'album */
+        .album-item img {
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .album-item:hover img {
+            transform: scale(1.04);
+            filter: grayscale(0) brightness(1);
+        }
+    </style>
 </head>
-<body class="bg-[#faf9f6] text-[#1c1b1a] antialiased flex flex-col min-h-screen justify-between">
+<body class="bg-[#0B132B] text-[#F4F5F6] antialiased selection:bg-[#E0A96D]/40 min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <nav class="bg-[#1c1b1a] text-white px-8 py-6 flex justify-between items-center tracking-[0.2em] uppercase text-[11px]">
-        <a href="index.html" class="text-xl font-serif tracking-[0.25em] font-light">L'Atelier du Grain</a>
-        <div class="hidden md:flex space-x-12 font-light">
-            <a href="index.html" class="text-stone-400 hover:text-white transition">Accueil</a>
-            <a href="propos.html" class="text-stone-400 hover:text-white transition">À Propos</a>
-            <a href="catalogue.html" class="text-stone-400 hover:text-white transition">La Collection</a>
-            <a href="album.html" class="text-[#c5a880]">L'Album</a>
-            <a href="contact.html" class="text-stone-400 hover:text-white transition">Contact</a>
+    <nav class="bg-[#0B132B] border-b-3 border-[#E0A96D] sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-24 flex justify-between items-center relative">
+            <a href="index.html" class="font-brand text-2xl tracking-tighter text-white uppercase font-black hover:text-[#E0A96D] transition-colors">
+                L'Atelier<span class="text-[#E0A96D]">.</span> du Grain
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-[10px] font-extrabold tracking-[0.3em] uppercase">
+                <a href="index.html" class="text-white/60 hover:text-white transition-colors">Accueil</a>
+                <a href="propos.html" class="text-white/60 hover:text-white transition-colors">La Maison</a>
+                <a href="catalogue.html" class="text-white/60 hover:text-white transition-colors">La Collection</a>
+                <a href="album.html" class="text-[#E0A96D] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[3px] after:bg-[#E0A96D]">L'Album</a>
+                <a href="contact.html" class="text-white/60 hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="hidden sm:block">
+                <a href="contact.html" class="relative inline-flex items-center justify-center bg-[#E0A96D] text-[#0B132B] text-[11px] font-black uppercase tracking-[0.25em] px-8 py-4 overflow-hidden group border-2 border-[#E0A96D] hover:bg-transparent hover:text-[#E0A96D] transition-all duration-200">
+                    <span class="relative z-10">Venir au Fournil</span>
+                </a>
+            </div>
         </div>
     </nav>
 
-    <main class="py-16 px-6 max-w-6xl mx-auto flex-1">
-        <div class="text-center mb-16">
-            <span class="text-[#c5a880] uppercase tracking-[0.2em] text-xs block mb-2">Instantanés</span>
-            <h2 class="text-3xl font-serif font-light tracking-wide">Les Coulisses de l'Atelier</h2>
+    <header class="bg-[#0B132B] text-white pt-24 pb-12 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-4">
+            <span class="text-[#E0A96D] text-[10px] font-black tracking-[0.4em] uppercase block">Instantanés du Fournil</span>
+            <h1 class="text-4xl sm:text-6xl font-brand tracking-tighter text-white">
+                Chroniques Visuelles<span class="text-[#E0A96D]">.</span>
+            </h1>
+            <div class="w-12 h-[1px] bg-[#E0A96D]/50 mx-auto mt-4"></div>
         </div>
+    </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px] md:auto-rows-[300px]">
-            <div class="md:col-span-4 md:row-span-2 overflow-hidden relative rounded-[2px]">
-                <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
+    <main class="py-12 bg-[#0B132B] w-full flex-grow">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                
+                <div class="album-item break-inside-avoid bg-[#0F1A3A] border-3 border-[#E0A96D] p-4 shadow-[6px_6px_0px_0px_rgba(224,169,109,0.15)] group relative overflow-hidden cursor-pointer mb-6">
+                    <div class="overflow-hidden bg-slate-900 h-[450px]">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800" class="w-full h-full object-cover grayscale brightness-90 group-hover:filter-none">
+                    </div>
+                    <div class="mt-4 flex justify-between items-center text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                        <span class="text-[#E0A96D] font-black">01 / Le Geste Brut</span>
+                        <span>Farine T80</span>
+                    </div>
+                </div>
+
+                <div class="album-item break-inside-avoid bg-[#0F1A3A] border-3 border-[#E0A96D] p-4 shadow-[6px_6px_0px_0px_rgba(224,169,109,0.15)] group relative overflow-hidden cursor-pointer mb-6">
+                    <div class="overflow-hidden bg-slate-900 h-[280px]">
+                        <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=800" class="w-full h-full object-cover grayscale brightness-90 group-hover:filter-none">
+                    </div>
+                    <div class="mt-4 flex justify-between items-center text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                        <span class="text-[#E0A96D] font-black">02 / Sortie du Feu</span>
+                        <span>Cuisson Noire</span>
+                    </div>
+                </div>
+
+                <div class="album-item break-inside-avoid bg-[#0F1A3A] border-3 border-[#E0A96D] p-4 shadow-[6px_6px_0px_0px_rgba(224,169,109,0.15)] group relative overflow-hidden cursor-pointer mb-6">
+                    <div class="overflow-hidden bg-slate-900 h-[320px]">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800" class="w-full h-full object-cover grayscale brightness-90 group-hover:filter-none">
+                    </div>
+                    <div class="mt-4 flex justify-between items-center text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                        <span class="text-[#E0A96D] font-black">03 / L'Or du Matin</span>
+                        <span>Feuilletage AOP</span>
+                    </div>
+                </div>
+
+                <div class="album-item break-inside-avoid bg-[#0F1A3A] border-3 border-[#E0A96D] p-4 shadow-[6px_6px_0px_0px_rgba(224,169,109,0.15)] group relative overflow-hidden cursor-pointer mb-6">
+                    <div class="overflow-hidden bg-slate-900 h-[400px]">
+                        <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=800" class="w-full h-full object-cover grayscale brightness-90 group-hover:filter-none">
+                    </div>
+                    <div class="mt-4 flex justify-between items-center text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                        <span class="text-[#E0A96D] font-black">04 / Alvéoles & Vie</span>
+                        <span>Hydratation 85%</span>
+                    </div>
+                </div>
+
+                <div class="album-item break-inside-avoid bg-[#0F1A3A] border-3 border-[#E0A96D] p-4 shadow-[6px_6px_0px_0px_rgba(224,169,109,0.15)] group relative overflow-hidden cursor-pointer mb-6">
+                    <div class="overflow-hidden bg-slate-900 h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=800" class="w-full h-full object-cover grayscale brightness-90 group-hover:filter-none">
+                    </div>
+                    <div class="mt-4 flex justify-between items-center text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                        <span class="text-[#E0A96D] font-black">05 / Obscurité Valrhona</span>
+                        <span>Chocolat 70%</span>
+                    </div>
+                </div>
+
+                <div class="album-item break-inside-avoid bg-[#0F1A3A] border-3 border-[#E0A96D] p-4 shadow-[6px_6px_0px_0px_rgba(224,169,109,0.15)] group relative overflow-hidden cursor-pointer mb-6">
+                    <div class="overflow-hidden bg-slate-900 h-[430px]">
+                        <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=800" class="w-full h-full object-cover grayscale brightness-90 group-hover:filter-none">
+                    </div>
+                    <div class="mt-4 flex justify-between items-center text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                        <span class="text-[#E0A96D] font-black">06 / Matière Première</span>
+                        <span>Blés Anciens</span>
+                    </div>
+                </div>
+
             </div>
-            <div class="md:col-span-8 md:row-span-1 overflow-hidden relative rounded-[2px]">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
-            </div>
-            <div class="md:col-span-4 md:row-span-1 overflow-hidden relative rounded-[2px]">
-                <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=500" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
-            </div>
-            <div class="md:col-span-4 md:row-span-1 overflow-hidden relative rounded-[2px]">
-                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=500" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
-            </div>
+
         </div>
     </main>
 
-    <footer class="bg-[#1c1b1a] text-stone-500 text-center py-8 text-[9px] tracking-[0.25em] uppercase">
-        <p>Maison L'Atelier du Grain — © 2026</p>
+    <footer class="bg-[#0B132B] text-slate-500 text-center py-16 relative z-10 border-t-2 border-white/5">
+        <div class="max-w-7xl mx-auto px-6 space-y-3">
+            <p class="tracking-[0.3em] uppercase text-[10px] font-black text-white">Maison L'Atelier du Grain — © 2026</p>
+            <div class="w-12 h-[1px] bg-[#E0A96D]/60 mx-auto"></div>
+            <p class="text-slate-400 text-[10px] max-w-xl mx-auto leading-relaxed tracking-wide font-normal">
+                Manufacture artisanale enregistrée au Répertoire des Métiers de Paris.<br>
+                <span class="text-slate-500 text-[9px] opacity-80 block mt-1">L'excellence, la transparence et le respect absolu du vivant au service du goût originel.</span>
+            </p>
+        </div>
     </footer>
+
 </body>
 </html>
